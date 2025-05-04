@@ -9,6 +9,20 @@ menuIcon.onclick = () => {
     header.classList.toggle('header-menu');
 };
 
+// const containerClient = document.querySelector(".container-cliente")
+
+// var swiper = new Swiper(".swiper", {
+//     slidesPerView: "auto",
+//     loop: true,
+//     speed: 5000,
+//     allowTouchMove: false,
+//     autoplay: {
+//         delay: 0,
+//         disableOnInteraction: false,
+//     },
+//     centeredSlides: false,
+// });
+
 
 // scroll section active
 let sections = document.querySelectorAll('section');
@@ -43,15 +57,15 @@ window.onscroll = () => {
 // scroll reveal
 ScrollReveal({ 
     reset: true,
-    distance: '50px',
+    distance: '100px',
     duration: 2000,
     delay: 200
 });
 
 ScrollReveal().reveal('.home-content, .sobre-box img, .heading, .title, .ax-image, .ax-content' , {origin: 'top'});
 ScrollReveal().reveal('.home-animation, .sobre-container, .servicos-container, .projetos-box, .faq-accordion-item', {origin: 'bottom'});
-ScrollReveal().reveal('.home-content h1, .sobre-box h3, .left-container .tl-text-box h3, .left-container .tl-text-box p', {origin: 'left'});
-ScrollReveal().reveal('.home-content p, .sobre-box p, .right-container .tl-text-box h3, .right-container .tl-text-box p', {origin: 'right'});
+ScrollReveal().reveal('.home-content h1, .sobre-box h3, .left-container .tl-text-box h3, .left-container .tl-text-box p, .cliente-box.left', {origin: 'left'});
+ScrollReveal().reveal('.home-content p, .sobre-box p, .right-container .tl-text-box h3, .right-container .tl-text-box p, .cliente-box.right', {origin: 'right'});
 
 // typed js 
 const typed = new Typed ('.multiple-text', {
