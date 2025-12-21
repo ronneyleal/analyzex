@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Exclusão de Conta e Dados – AnalyzeX" />
+    <meta
+      property="og:description"
+      content="Solicite a exclusão da sua conta e dos seus dados do AnalyzeX."
+    />
+    <meta
+      property="og:url"
+      content="https://analyzex.com.br/exclusao-conta.html"
+    />
+    <title>Exclusão de Conta e Dados – AnalyzeX</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      body {
+        background: #0b1011;
+
+        /* override do css/style.css (que deve ter max-width no body) */
+        max-width: none !important;
+        width: 100% !important;
+        margin: 0 !important;
+      }
+
+      /* garante que a área da página ocupe a largura e centralize o card */
+      .policy-page {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        padding: 120px 8% 60px;
+        min-height: 100vh;
+      }
+
+      /* card centralizado e com largura responsiva */
+      .policy-card {
+        width: 100%;
+        max-width: 980px;
+
+        margin: 0 !important; /* o flex já centraliza */
+      }
+      .policy-title {
+        font-size: 2.2rem;
+        margin-bottom: 6px;
+        color: #fff;
+      }
+      .policy-subtitle {
+        color: rgba(255, 255, 255, 0.75);
+        margin-bottom: 18px;
+        font-size: 1rem;
+      }
+      .policy-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 14px 0 18px;
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.95rem;
+      }
+      .policy-meta .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(20, 184, 166, 0.12);
+        border: 1px solid rgba(45, 212, 191, 0.25);
+        color: rgba(255, 255, 255, 0.85);
+      }
+      .policy-content {
+        color: rgba(255, 255, 255, 0.86);
+        line-height: 1.75;
+        font-size: 1rem;
+      }
+      .policy-content h2 {
+        margin: 18px 0 10px;
+        font-size: 1.25rem;
+        color: #fff;
+      }
+      .policy-content ul {
+        margin: 10px 0 10px 22px;
+      }
+      .policy-content li {
+        margin: 6px 0;
+      }
+      .policy-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+      .btn-ax {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border-radius: 12px;
+        background: rgba(45, 212, 191, 0.14);
+        border: 1px solid rgba(45, 212, 191, 0.35);
+        color: #fff;
+        text-decoration: none;
+        transition: 0.2s;
+      }
+      .btn-ax:hover {
+        transform: translateY(-1px);
+        background: rgba(45, 212, 191, 0.2);
+      }
+      .btn-ax.secondary {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .btn-ax.secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .policy-footer-note {
+        margin-top: 14px;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9rem;
+      }
+
+      .form-wrap {
+        max-width: 860px;
+        margin: 16px auto 0;
+        padding: 18px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .form-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 14px;
+      }
+
+      .form-row.full {
+        grid-column: 1 / -1;
+      }
+
+      .form-row .input,
+      .form-row .textarea {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        display: block;
+      }
+
+      @media (max-width: 860px) {
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .form-row {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .label {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 0.95rem;
+      }
+      .input,
+      .textarea {
+        width: 100%;
+        padding: 12px 12px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: #fff;
+        outline: none;
+      }
+      .textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+      .hint {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9rem;
+      }
+      .req {
+        color: rgba(45, 212, 191, 1);
+        font-weight: 600;
+      }
+      .status {
+        margin-top: 12px;
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.06);
+        color: rgba(255, 255, 255, 0.9);
+        display: none;
+      }
+      .status.ok {
+        background: rgba(34, 197, 94, 0.12);
+        border-color: rgba(34, 197, 94, 0.25);
+      }
+      .status.err {
+        background: rgba(239, 68, 68, 0.12);
+        border-color: rgba(239, 68, 68, 0.25);
+      }
+      .checkbox {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        padding: 12px 12px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .checkbox input {
+        margin-top: 3px;
+      }
+      .btn-submit {
+        cursor: pointer;
+        border: 0;
+        padding: 12px 14px;
+        border-radius: 12px;
+        background: rgba(45, 212, 191, 0.14);
+        border: 1px solid rgba(45, 212, 191, 0.35);
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: 0.2s;
+      }
+      .btn-submit:hover {
+        transform: translateY(-1px);
+        background: rgba(45, 212, 191, 0.2);
+      }
+      .btn-submit:disabled {
+        opacity: 0.55;
+        cursor: not-allowed;
+        transform: none;
+      }
+      @media (max-width: 860px) {
+        .form-wrap {
+          max-width: 100%;
+        }
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header" id="nav-bar">
+      <a href="https://analyzex.com.br" class="logo-link">
+        <img class="logo" src="/img/logo.png" alt="" />
+      </a>
+      <nav class="navbar">
+        <a href="https://analyzex.com.br#home">Início</a>
+        <a href="https://analyzex.com.br#sobre">Sobre</a>
+        <a href="https://analyzex.com.br#servicos">Serviços</a>
+        <a href="https://analyzex.com.br#clientes">Clientes</a>
+        <a href="https://analyzex.com.br#projetos">Projetos</a>
+        <a href="https://analyzex.com.br#faq">FAQ</a>
+      </nav>
+    </header>
+
+    <main class="policy-page">
+      <div class="policy-card">
+        <h1 class="policy-title">🧾 Exclusão de Conta e Dados – AnalyzeX</h1>
+        <div class="policy-subtitle">
+          Use este formulário para solicitar a exclusão da sua conta na
+          AnalyzeX.
+        </div>
+
+        <div class="policy-meta">
+          <span class="badge"
+            ><i class="bx bx-time"></i> Prazo: até 10 dias úteis</span
+          >
+          <span class="badge"
+            ><i class="bx bx-briefcase"></i> Uso corporativo</span
+          >
+          <span class="badge"
+            ><i class="bx bx-lock"></i> Solicitação registrada via suporte</span
+          >
+        </div>
+
+        <div class="policy-content">
+          <p>
+            Ao enviar esta solicitação, nossa equipe validará sua vinculação à
+            empresa informada e iniciará o processo de exclusão. Em alguns
+            casos, a empresa contratante pode exigir retenção mínima para
+            auditoria e obrigações legais.
+          </p>
+
+          <h2>O que será excluído</h2>
+          <ul>
+            <li>Conta do usuário (acesso ao app e à plataforma)</li>
+            <li>Dados de perfil associados (quando aplicável)</li>
+          </ul>
+
+          <h2>Solicitar exclusão</h2>
+          <div class="hint" style="margin-bottom: 10px">
+            Campos marcados com <span class="req">*</span> são obrigatórios.
+          </div>
+
+          <div class="form-wrap">
+            <form id="delForm">
+              <div class="form-grid">
+                <div class="form-row">
+                  <div class="label">
+                    Nome da empresa <span class="req">*</span>
+                  </div>
+                  <input
+                    class="input"
+                    name="companyName"
+                    autocomplete="organization"
+                    required
+                  />
+                </div>
+
+                <div class="form-row">
+                  <div class="label">
+                    Nome de usuário <span class="req">*</span>
+                  </div>
+                  <input
+                    class="input"
+                    name="username"
+                    autocomplete="username"
+                    required
+                  />
+                  <div class="hint">O mesmo usado para login no app.</div>
+                </div>
+
+                <div class="form-row full">
+                  <div class="label">E-mail (opcional)</div>
+                  <input
+                    class="input"
+                    type="email"
+                    name="email"
+                    autocomplete="email"
+                  />
+                  <div class="hint">
+                    Se informado, poderemos usar para retorno sobre a
+                    solicitação.
+                  </div>
+                </div>
+
+                <div class="form-row full">
+                  <div class="label">Observações (opcional)</div>
+                  <textarea
+                    class="textarea"
+                    name="notes"
+                    placeholder="Se desejar, descreva algo relevante para a exclusão."
+                  ></textarea>
+                </div>
+
+                <div class="form-row full">
+                  <label class="checkbox">
+                    <input type="checkbox" name="consent" required />
+                    <span>
+                      Confirmo que sou o titular da conta e que desejo solicitar
+                      a exclusão da conta e dos dados vinculados.
+                    </span>
+                  </label>
+                </div>
+
+                <div class="form-row full">
+                  <button class="btn-submit" id="btnSubmit" type="submit">
+                    <i class="bx bx-send"></i> Enviar solicitação
+                  </button>
+
+                  <div id="statusOk" class="status ok">
+                    Solicitação enviada com sucesso. A exclusão será realizada
+                    em até 10 dias úteis.
+                  </div>
+                  <div id="statusErr" class="status err"></div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="policy-actions">
+            <a class="btn-ax" href="https://analyzex.com.br">
+              <i class="bx bx-home"></i> Voltar para a página inicial
+            </a>
+            <a class="btn-ax secondary" href="/privacy.html">
+              <i class="bx bx-lock-alt"></i> Política de Privacidade
+            </a>
+          </div>
+
+          <div class="policy-footer-note">
+            Se preferir, você também pode solicitar via e-mail:
+            contato@analyzex.com.br
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-text">
+        <p>
+          Copyright &copy; 2025 by <span>Ronney Leal</span> | All Rights
+          Reserved.
+        </p>
+      </div>
+      <div class="footer-iconTop">
+        <a href="https://analyzex.com.br#home"
+          ><i class="bx bx-up-arrow-alt"></i
+        ></a>
+      </div>
+    </footer>
+
+    <script>
+      const form = document.getElementById("delForm");
+      const btn = document.getElementById("btnSubmit");
+      const ok = document.getElementById("statusOk");
+      const err = document.getElementById("statusErr");
+
+      const API_URL =
+        "https://app.analyzex.com.br/api/public/account-deletion-request";
+
+      //   const API_URL =
+      //     location.hostname === "localhost" || location.hostname === "127.0.0.1"
+      //       ? "http://localhost:3333/api/public/account-deletion-request"
+      //       : "https://app.analyzex.com.br/api/public/account-deletion-request";
+
+      function hideStatus() {
+        ok.style.display = "none";
+        err.style.display = "none";
+        err.textContent = "";
+      }
+
+      function setErr(msg) {
+        err.textContent =
+          msg || "Não foi possível enviar sua solicitação. Tente novamente.";
+        err.style.display = "block";
+        ok.style.display = "none";
+      }
+
+      function setOk() {
+        ok.style.display = "block";
+        err.style.display = "none";
+        err.textContent = "";
+      }
+
+      hideStatus();
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        btn.disabled = true;
+        hideStatus();
+
+        const fd = new FormData(form);
+        const payload = {
+          companyName: String(fd.get("companyName") || "").trim(),
+          username: String(fd.get("username") || "").trim(),
+          email: String(fd.get("email") || "").trim(),
+          notes: String(fd.get("notes") || "").trim(),
+          consent: !!fd.get("consent"),
+        };
+
+        if (!payload.companyName || !payload.username || !payload.consent) {
+          btn.disabled = false;
+          return setErr(
+            "Preencha os campos obrigatórios e confirme a declaração."
+          );
+        }
+
+        try {
+          const res = await fetch(API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+
+          const data = await res.json().catch(() => ({}));
+          if (!res.ok) {
+            btn.disabled = false;
+            return setErr(data?.message || "Erro ao enviar solicitação.");
+          }
+
+          form.reset();
+          setOk();
+        } catch {
+          setErr("Falha de conexão. Verifique sua internet e tente novamente.");
+        } finally {
+          btn.disabled = false;
+        }
+      });
+    </script>
+  </body>
+</html>
