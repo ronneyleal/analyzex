@@ -19,44 +19,47 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+
     <style>
+      :root {
+        --content-max: 860px;
+      }
+
       body {
         background: #0b1011;
-
-        /* override do css/style.css (que deve ter max-width no body) */
         max-width: none !important;
         width: 100% !important;
         margin: 0 !important;
       }
 
-      /* garante que a área da página ocupe a largura e centralize o card */
       .policy-page {
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: flex-start;
-
         padding: 120px 8% 60px;
         min-height: 100vh;
+        margin: 0 !important;
       }
 
-      /* card centralizado e com largura responsiva */
       .policy-card {
         width: 100%;
-        max-width: 980px;
-
-        margin: 0 !important; /* o flex já centraliza */
+        max-width: var(--content-max);
+        margin: 0 !important;
       }
+
       .policy-title {
         font-size: 2.2rem;
         margin-bottom: 6px;
         color: #fff;
       }
+
       .policy-subtitle {
         color: rgba(255, 255, 255, 0.75);
         margin-bottom: 18px;
         font-size: 1rem;
       }
+
       .policy-meta {
         display: flex;
         flex-wrap: wrap;
@@ -65,6 +68,7 @@
         color: rgba(255, 255, 255, 0.75);
         font-size: 0.95rem;
       }
+
       .policy-meta .badge {
         display: inline-flex;
         align-items: center;
@@ -74,29 +78,36 @@
         background: rgba(20, 184, 166, 0.12);
         border: 1px solid rgba(45, 212, 191, 0.25);
         color: rgba(255, 255, 255, 0.85);
+        max-width: 100%;
       }
+
       .policy-content {
         color: rgba(255, 255, 255, 0.86);
         line-height: 1.75;
         font-size: 1rem;
       }
+
       .policy-content h2 {
         margin: 18px 0 10px;
         font-size: 1.25rem;
         color: #fff;
       }
+
       .policy-content ul {
         margin: 10px 0 10px 22px;
       }
+
       .policy-content li {
         margin: 6px 0;
       }
+
       .policy-actions {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
         margin-top: 18px;
       }
+
       .btn-ax {
         display: inline-flex;
         align-items: center;
@@ -108,18 +119,23 @@
         color: #fff;
         text-decoration: none;
         transition: 0.2s;
+        max-width: 100%;
       }
+
       .btn-ax:hover {
         transform: translateY(-1px);
         background: rgba(45, 212, 191, 0.2);
       }
+
       .btn-ax.secondary {
         background: rgba(255, 255, 255, 0.06);
         border: 1px solid rgba(255, 255, 255, 0.12);
       }
+
       .btn-ax.secondary:hover {
         background: rgba(255, 255, 255, 0.1);
       }
+
       .policy-footer-note {
         margin-top: 14px;
         color: rgba(255, 255, 255, 0.6);
@@ -127,8 +143,8 @@
       }
 
       .form-wrap {
-        max-width: 860px;
-        margin: 16px auto 0;
+        width: 100%;
+        margin-top: 16px;
         padding: 18px;
         border-radius: 16px;
         background: rgba(255, 255, 255, 0.04);
@@ -146,51 +162,48 @@
         grid-column: 1 / -1;
       }
 
-      .form-row .input,
-      .form-row .textarea {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        display: block;
-      }
-
-      @media (max-width: 860px) {
-        .form-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
       .form-row {
         display: flex;
         flex-direction: column;
         gap: 8px;
+        align-items: stretch;
       }
+
       .label {
         color: rgba(255, 255, 255, 0.85);
         font-size: 0.95rem;
       }
+
       .input,
       .textarea {
         width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        display: block;
         padding: 12px 12px;
         border-radius: 12px;
         background: rgba(255, 255, 255, 0.06);
         border: 1px solid rgba(255, 255, 255, 0.12);
         color: #fff;
         outline: none;
+        box-sizing: border-box;
       }
+
       .textarea {
         min-height: 120px;
         resize: vertical;
       }
+
       .hint {
         color: rgba(255, 255, 255, 0.6);
         font-size: 0.9rem;
       }
+
       .req {
         color: rgba(45, 212, 191, 1);
         font-weight: 600;
       }
+
       .status {
         margin-top: 12px;
         padding: 12px 14px;
@@ -200,14 +213,17 @@
         color: rgba(255, 255, 255, 0.9);
         display: none;
       }
+
       .status.ok {
         background: rgba(34, 197, 94, 0.12);
         border-color: rgba(34, 197, 94, 0.25);
       }
+
       .status.err {
         background: rgba(239, 68, 68, 0.12);
         border-color: rgba(239, 68, 68, 0.25);
       }
+
       .checkbox {
         display: flex;
         gap: 10px;
@@ -217,9 +233,11 @@
         background: rgba(255, 255, 255, 0.04);
         border: 1px solid rgba(255, 255, 255, 0.1);
       }
+
       .checkbox input {
         margin-top: 3px;
       }
+
       .btn-submit {
         cursor: pointer;
         border: 0;
@@ -233,25 +251,41 @@
         gap: 10px;
         transition: 0.2s;
       }
+
       .btn-submit:hover {
         transform: translateY(-1px);
         background: rgba(45, 212, 191, 0.2);
       }
+
       .btn-submit:disabled {
         opacity: 0.55;
         cursor: not-allowed;
         transform: none;
       }
+
+      #delForm,
+      #delForm * {
+        margin: 0;
+      }
+
+      #delForm input,
+      #delForm textarea,
+      #delForm button {
+        margin: 0;
+      }
+
       @media (max-width: 860px) {
-        .form-wrap {
-          max-width: 100%;
+        .policy-page {
+          padding: 120px 16px 60px;
         }
+
         .form-grid {
           grid-template-columns: 1fr;
         }
       }
     </style>
   </head>
+
   <body>
     <header class="header" id="nav-bar">
       <a href="https://analyzex.com.br" class="logo-link">
@@ -421,11 +455,6 @@
 
       const API_URL =
         "https://app.analyzex.com.br/api/public/account-deletion-request";
-
-      //   const API_URL =
-      //     location.hostname === "localhost" || location.hostname === "127.0.0.1"
-      //       ? "http://localhost:3333/api/public/account-deletion-request"
-      //       : "https://app.analyzex.com.br/api/public/account-deletion-request";
 
       function hideStatus() {
         ok.style.display = "none";
