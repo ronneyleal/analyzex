@@ -44,3 +44,19 @@
       });
   });
 })();
+
+(function () {
+  const btn = document.getElementById("btnTop");
+  if (!btn) return;
+
+  const toggle = () => {
+    btn.classList.toggle("is-visible", window.scrollY > 500);
+  };
+
+  window.addEventListener("scroll", toggle, { passive: true });
+  toggle();
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+})();
