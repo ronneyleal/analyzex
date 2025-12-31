@@ -576,3 +576,19 @@ hr{
   font-size:.78em;
   letter-spacing:.08em;
 }
+
+@media (max-width: 720px){
+  .manual-logos{
+    margin-left:0;
+    width:100%;
+    justify-content:center;
+  }
+}
+
+@media (max-width: 520px){
+  .manual-logos{
+    margin-left:0;
+    width:100%;
+    justify-content:center;
+  }
+}
