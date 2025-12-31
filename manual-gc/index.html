@@ -1,0 +1,3418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manual AnalyzeX · Global Clinic</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/style-manualGC.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <section class="manual-cover" id="capa">
+      <div class="manual-cover-bg" aria-hidden="true"></div>
+
+      <div class="manual-cover-card">
+        <div class="manual-cover-top">
+          <div class="manual-badges">
+            <span class="manual-badge">
+              <i class="bx bx-bar-chart-alt-2"></i> Relatórios & Dashboards
+            </span>
+            <span class="manual-badge secondary">
+              <i class="bx bx-shield-quarter"></i> Uso corporativo
+            </span>
+          </div>
+
+          <div class="manual-logos">
+            <img class="manual-logo ax" src="../img/ax.png" alt="AnalyzeX" />
+            <div class="manual-divider" aria-hidden="true"></div>
+            <img
+              class="manual-logo gc"
+              src="../img/gc.png"
+              alt="Global Clinic"
+            />
+          </div>
+        </div>
+
+        <h1 class="manual-title">
+          Manual do Sistema de Relatórios
+          <span class="manual-title-accent">AnalyzeX • Global Clinic</span>
+        </h1>
+
+        <p class="manual-subtitle">
+          Guia prático para entender indicadores, filtros, páginas e como
+          interpretar os resultados no dia a dia.
+        </p>
+
+        <div class="manual-contact">
+          <h2 class="manual-contact-title">Contato</h2>
+          <p class="manual-contact-text">
+            Em caso de dúvidas sobre este manual ou sobre os indicadores:
+          </p>
+
+          <div class="manual-contact-row">
+            <i class="bx bx-envelope"></i>
+            <span>contato@analyzex.com.br</span>
+          </div>
+
+          <div class="policy-actions">
+            <a
+              class="btn-ax"
+              href="https://analyzex.com.br"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="bx bx-home"></i> Voltar para a página inicial
+            </a>
+
+            <a class="btn-ax secondary" href="mailto:contato@analyzex.com.br">
+              <i class="bx bx-envelope"></i> Falar com suporte
+            </a>
+
+            <a
+              class="btn-whatsapp"
+              href="https://api.whatsapp.com/send?phone=5589981192963"
+              target="_blank"
+              rel="noopener"
+            >
+              <img src="../img/whatsapp.png" alt="WhatsApp" />
+            </a>
+          </div>
+        </div>
+
+        <div class="manual-cover-glow" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <nav class="toc" id="sumario">
+      <h2>Índice</h2>
+      <ul>
+        <li><a href="#sec1">1. Painel do Dia · Painel</a></li>
+        <li><a href="#sec2">2. Agendamentos · Agenda</a></li>
+        <li><a href="#sec3">3. Resumo · Resumo</a></li>
+        <li><a href="#sec4">4. Agendamentos · Resumo</a></li>
+        <li><a href="#sec5">5. Agendamentos · Atendente</a></li>
+        <li><a href="#sec6">6. Agendamentos · Atendentes (Geral)</a></li>
+        <li><a href="#sec7">7. Atendimentos · Resumo</a></li>
+        <li><a href="#sec8">8. Atendimentos · Senhas</a></li>
+        <li><a href="#sec9">9. Atendimentos · Cancelamentos</a></li>
+        <li><a href="#sec10">10. Atendimentos · Recepcionista</a></li>
+        <li><a href="#sec11">11. Atendimentos · Recepcionistas (Geral)</a></li>
+        <li><a href="#sec12">12. Financeiro · Dashboard</a></li>
+        <li><a href="#sec13">13. Financeiro · Faturamento</a></li>
+        <li><a href="#sec14">14. Financeiro · Recebimentos</a></li>
+        <li><a href="#sec15">15. Financeiro · Em Aberto</a></li>
+        <li><a href="#sec16">16. Financeiro · Despesas</a></li>
+        <li><a href="#sec17">17. Financeiro · DRE</a></li>
+        <li><a href="#sec18">18. Painel Médico · Painel</a></li>
+      </ul>
+    </nav>
+
+    <div class="font-controls" aria-label="Controle de fonte">
+      <button
+        class="font-btn"
+        id="font-inc"
+        type="button"
+        title="Aumentar fonte"
+      >
+        A+
+      </button>
+      <button
+        class="font-btn"
+        id="font-dec"
+        type="button"
+        title="Diminuir fonte"
+      >
+        A-
+      </button>
+    </div>
+
+    <main>
+      <section id="sec1">
+        <h2>1 - 📊 Painel do Dia · Painel</h2>
+
+        <p>
+          A página <strong>Painel do Dia · Painel</strong> é um dashboard
+          operacional voltado para acompanhar, em tempo real, o movimento da
+          clínica no dia selecionado, reunindo os principais indicadores de
+          agenda, o fluxo por horário e listagens detalhadas de execução
+          (Atendimentos e Senhas).
+        </p>
+
+        <p>
+          Ela é ideal para recepção, coordenação e gestão do fluxo, porque
+          entrega uma leitura rápida do que está acontecendo “agora” e onde
+          estão os gargalos do dia.
+        </p>
+
+        <div class="highlight">
+          <h3>🎯 Objetivo da página</h3>
+          <p>
+            O Painel do Dia foi criado para responder, de forma simples e
+            imediata, perguntas como:
+          </p>
+          <ul>
+            <li>
+              Quantos agendamentos existem hoje e qual o status operacional
+              deles?
+            </li>
+            <li>O atendimento está fluindo no ritmo esperado por horário?</li>
+            <li>
+              Onde estão os pacientes no fluxo (aguardando, em atendimento,
+              atendidos)?
+            </li>
+            <li>
+              Como está a fila/controle de senhas e quais são as prioridades do
+              dia?
+            </li>
+          </ul>
+          <p>
+            Tudo isso com filtros práticos para tornar a análise rápida e
+            acionável.
+          </p>
+        </div>
+
+        <h3>📌 Indicadores do topo (KPIs)</h3>
+        <p>
+          No topo, a página apresenta KPIs que dão leitura instantânea do dia:
+        </p>
+        <ul>
+          <li>
+            <strong>Agendamentos</strong>: total de agendamentos do dia
+            selecionado (base operacional da agenda).
+          </li>
+          <li>
+            <strong>Confirmados</strong>: quantos agendamentos do dia tiveram
+            confirmação.
+          </li>
+          <li>
+            <strong>Atendidos</strong>: quantos agendamentos efetivamente
+            viraram atendimento.
+          </li>
+          <li>
+            <strong>Aguardando</strong>: quantos agendamentos ainda estão
+            pendentes/na fila de execução.
+          </li>
+          <li>
+            <strong>Cancelados</strong>: total de agendamentos cancelados no dia
+            (impacto direto em capacidade e remarcações).
+          </li>
+        </ul>
+
+        <p>
+          Esses KPIs ajudam a medir rapidamente volume, conversão em atendimento
+          e perdas operacionais (cancelamentos e fila de aguardando).
+        </p>
+
+        <h3>⏱️ Fluxo por Horário (Senhas x Atendimentos)</h3>
+        <p>
+          A seção Fluxo por Horário traz um gráfico de área com duas séries:
+        </p>
+        <ul>
+          <li>
+            <strong>Senhas</strong> (movimento de entrada / geração de demanda)
+          </li>
+          <li><strong>Atendimentos</strong> (execução / consumo da demanda)</li>
+        </ul>
+
+        <p>Essa visualização é essencial para identificar:</p>
+        <ul>
+          <li>picos de chegada vs capacidade de atendimento</li>
+          <li>
+            horários em que a fila cresce (senhas sobem mais que atendimentos)
+          </li>
+          <li>
+            períodos em que a execução acelera (atendimentos acompanham ou
+            superam entradas)
+          </li>
+        </ul>
+
+        <p>
+          Na prática, é um dos melhores pontos do painel para enxergar gargalo
+          por horário.
+        </p>
+
+        <h3>🧭 Visões detalhadas (Tabs)</h3>
+        <p>
+          A página organiza o detalhamento em duas abas, permitindo alternar
+          entre visão clínica e visão de fila:
+        </p>
+
+        <h4>🔹 1) Atendimentos</h4>
+        <p>
+          Uma Tabela de Atendimentos com foco no que está sendo executado no
+          dia, com recursos que facilitam operação e auditoria rápida:
+        </p>
+        <ul>
+          <li>formatação de campos relevantes (data/hora, tempos, status)</li>
+          <li>
+            destaque visual por Situação (ex.: atendido, em atendimento,
+            aguardando)
+          </li>
+          <li>identificação de Prioridade</li>
+          <li>paginação e ajuste de tamanho de página</li>
+        </ul>
+
+        <p>
+          Campos típicos exibidos: cliente, profissional, convênio,
+          procedimento, situação, prioridade, tempos e horários do atendimento.
+        </p>
+
+        <h4>🔹 2) Senhas</h4>
+        <p>
+          Uma Tabela de Senhas voltada ao controle de fila e perfil do
+          atendimento:
+        </p>
+        <ul>
+          <li>status calculado entre Aguardando x Atendida</li>
+          <li>diferenciação do Tipo (ex.: Consulta x Recepção)</li>
+          <li>
+            marcações operacionais importantes:
+            <ul>
+              <li>Prioridade</li>
+              <li>Maior 80</li>
+              <li>Atendido</li>
+            </ul>
+          </li>
+          <li>paginação e ajuste de tamanho de página</li>
+          <li>
+            destaque visual por status/tipo (ex.: atendida em verde, consulta em
+            azul)
+          </li>
+        </ul>
+
+        <p>
+          Essa aba é muito útil para recepção e coordenação visualizarem
+          rapidamente perfil de demanda, prioridades e andamento da fila.
+        </p>
+
+        <h3>🔍 Filtros e exploração</h3>
+        <p>
+          O painel possui uma área de Filtros bem completa, permitindo analisar
+          o dia com recortes rápidos:
+        </p>
+        <ul>
+          <li>Data do painel (seleção do dia)</li>
+          <li>busca por Cliente/Profissional</li>
+          <li>filtro por Procedimento (Atendimentos)</li>
+          <li>
+            filtros multi-seleção para:
+            <ul>
+              <li>Situação (Atend.)</li>
+              <li>Prioridade (Atend.)</li>
+              <li>Convênio</li>
+              <li>Tipo (Senhas)</li>
+              <li>Situação (Senhas)</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p>Além disso, há ações diretas de:</p>
+        <ul>
+          <li>Limpar filtros</li>
+          <li>Recarregar os dados do painel</li>
+        </ul>
+
+        <div class="highlight success">
+          <h3>✅ Por que essa página é importante</h3>
+          <p>
+            O Painel do Dia é uma página-chave porque conecta agenda, execução e
+            fila em uma única visão, permitindo:
+          </p>
+          <ul>
+            <li>gestão do fluxo em tempo real</li>
+            <li>acompanhamento de capacidade x demanda</li>
+            <li>
+              leitura rápida de status do dia (confirmados, atendidos,
+              aguardando, cancelados)
+            </li>
+            <li>
+              suporte a decisões imediatas (reforço de equipe, redistribuição,
+              priorizações)
+            </li>
+          </ul>
+          <p>
+            Em resumo, é um painel de controle operacional diário, feito para
+            agir rápido com base no que está acontecendo na clínica, e não
+            apenas analisar o histórico.
+          </p>
+        </div>
+      </section>
+
+      <div class="page-separator" aria-hidden="true"></div>
+
+      <section id="sec2">
+        <h2>2 - 📅 Agendamentos · Agenda</h2>
+
+        <p>
+          A página <strong>Agendamentos · Agenda</strong> é a visão operacional
+          detalhada da agenda, projetada para listar, filtrar e analisar os
+          agendamentos dentro de um período selecionado, mostrando não apenas “o
+          que está marcado”, mas também como a agenda está distribuída por
+          convênio, tipo de atendimento, origem, usuário e situação.
+        </p>
+
+        <p>
+          Ela é especialmente útil para recepção, coordenação e gestão, pois
+          combina análises rápidas (gráficos e resumos) com uma tabela completa
+          e uma matriz exploratória para identificar picos e padrões de
+          ocupação.
+        </p>
+
+        <div class="highlight">
+          <h3>🎯 Objetivo da página</h3>
+          <p>
+            O objetivo da Agendamentos · Agenda é permitir que o time acompanhe
+            e responda rapidamente perguntas como:
+          </p>
+          <ul>
+            <li>
+              Quais convênios e tipos de atendimento mais movimentam a agenda?
+            </li>
+            <li>
+              De onde vêm os agendamentos (canais/origem) e quem está
+              registrando (usuário)?
+            </li>
+            <li>
+              Como está o “mix” de situações (pendente, confirmado, cancelado,
+              etc.) no período?
+            </li>
+            <li>
+              Como a agenda se distribui por profissional e por horário ao longo
+              dos dias?
+            </li>
+            <li>
+              Quais são os detalhes completos de um agendamento específico?
+            </li>
+          </ul>
+        </div>
+
+        <h3>🧩 Filtros e controle de período</h3>
+        <p>
+          A página conta com um painel de filtros robusto, com foco em controle
+          e performance (aplicação por “Aplicar”):
+        </p>
+        <ul>
+          <li>
+            Período (Data Inicial / Data Final) com limite de até 3 meses para
+            consulta operacional (evita cargas pesadas).
+          </li>
+          <li>Situação da Agenda (multi-seleção).</li>
+          <li>Cliente (busca textual).</li>
+          <li>
+            Filtros multi-seleção para:
+            <ul>
+              <li>Convênio</li>
+              <li>Tipo de Atendimento</li>
+              <li>Usuário</li>
+              <li>Origem (canal do agendamento)</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p>Ações disponíveis no painel:</p>
+        <ul>
+          <li>Aplicar (executar a consulta com o “draft” dos filtros)</li>
+          <li>Recarregar</li>
+          <li>
+            Limpar (resetar filtros e volta para o período padrão do mês até
+            hoje)
+          </li>
+        </ul>
+
+        <h3>📌 Visões analíticas do topo</h3>
+
+        <h4>🔹 1) Ranking (Convênio / Tipo)</h4>
+        <p>Um gráfico de barras verticais alternável entre:</p>
+        <ul>
+          <li>
+            <strong>Convênio</strong>: mostra quais convênios concentram mais
+            agendamentos.
+          </li>
+          <li>
+            <strong>Tipo de Atendimento</strong>: evidencia o mix de tipos (ex.:
+            consultas, retornos, etc., conforme cadastro).
+          </li>
+        </ul>
+
+        <p>
+          Essa visão é essencial para entender a concentração de demanda e
+          apoiar decisões como priorização de agenda, bloqueios e estratégia de
+          atendimento.
+        </p>
+
+        <h4>🔹 2) Resumo (Origem / Confirmado)</h4>
+        <p>Um cartão alternável com duas leituras:</p>
+        <ul>
+          <li>
+            <strong>Origem</strong>: gráfico com legenda exibindo a distribuição
+            por canal (ex.: recepção, telefone, WhatsApp, etc.).
+          </li>
+          <li>
+            <strong>Confirmado</strong>: donut com percentual central,
+            evidenciando a taxa de confirmação no período.
+          </li>
+        </ul>
+
+        <p>
+          Essa área ajuda a enxergar rapidamente qualidade da agenda e
+          eficiência dos canais.
+        </p>
+
+        <h3>🧭 Modos de exploração: Tabela e Matriz</h3>
+
+        <h4>🔹 1) Tabela (lista)</h4>
+        <p>
+          A visão em tabela reúne os agendamentos do período com recursos de
+          operação e auditoria:
+        </p>
+        <ul>
+          <li>paginação</li>
+          <li>controle de tamanho de página</li>
+          <li>ordenação server-side</li>
+          <li>clique no registro para obter detalhes completos (modal)</li>
+        </ul>
+
+        <p>Campos exibidos (principais):</p>
+        <ul>
+          <li>Data e Hora da agenda</li>
+          <li>Cliente</li>
+          <li>Profissional</li>
+          <li>Situação (com cor da própria situação)</li>
+          <li>Confirmado (ícone)</li>
+          <li>Tipo de Atendimento (com badge colorida)</li>
+          <li>Procedimento</li>
+          <li>Usuário</li>
+        </ul>
+
+        <p>
+          Essa visão é a mais usada no dia a dia para consultar casos
+          específicos, conferir status e validar registros.
+        </p>
+
+        <h4>🔹 2) Matriz (heatmap)</h4>
+        <p>
+          Modo analítico para enxergar padrões e concentração de agendamentos no
+          período, com duas opções:
+        </p>
+        <ul>
+          <li>
+            <strong>Por Profissional × Data</strong>: identifica quais
+            profissionais concentram mais agendamentos em cada dia.
+          </li>
+          <li>
+            <strong>Por Horário × Data</strong>: evidencia picos de horários ao
+            longo dos dias (ótimo para gestão de capacidade).
+          </li>
+        </ul>
+
+        <p>
+          A matriz é interativa: ao clicar em uma célula, abre um modal listando
+          os agendamentos daquele recorte (profissional/horário + data),
+          facilitando investigação rápida de lotações e gargalos.
+        </p>
+
+        <h3>🪟 Detalhamento do registro (modal)</h3>
+        <p>
+          Ao selecionar um agendamento, a página abre um modal com informações
+          completas do registro, incluindo:
+        </p>
+        <ul>
+          <li>código e datas (registro e agenda)</li>
+          <li>cliente (código e sequência)</li>
+          <li>profissional</li>
+          <li>convênio e procedimento</li>
+          <li>situação (com estilo/cores)</li>
+          <li>usuário</li>
+          <li>tipo de atendimento (com badge)</li>
+          <li>origem</li>
+          <li>informações de confirmação (status, data e responsável)</li>
+        </ul>
+
+        <h3>📤 Exportação e impressão (PDF, Excel e CSV)</h3>
+        <p>
+          A página também é uma ferramenta de controle e prestação de contas,
+          oferecendo exportação com:
+        </p>
+        <ul>
+          <li>seleção de período e filtros</li>
+          <li>seleção de colunas</li>
+          <li>
+            formatos:
+            <ul>
+              <li>PDF (layout de impressão personalizado)</li>
+              <li>Excel (.xlsx)</li>
+              <li>CSV</li>
+            </ul>
+          </li>
+          <li>limite ampliado para exportação: até 12 meses</li>
+          <li>
+            registro de log de exportação (usuário, período, filtros, colunas,
+            formato e quantidade de linhas)
+          </li>
+        </ul>
+
+        <div class="highlight success">
+          <h3>✅ Por que essa página é importante</h3>
+          <p>
+            A Agendamentos · Agenda é essencial porque conecta análise e
+            operação no mesmo lugar:
+          </p>
+          <ul>
+            <li>
+              entrega visão rápida do mix e qualidade da agenda
+              (origem/confirmado/situação)
+            </li>
+            <li>
+              permite entender distribuição de demanda por convênio e tipo
+            </li>
+            <li>
+              facilita identificar picos e concentração por profissional e
+              horário (matriz)
+            </li>
+            <li>
+              fornece uma listagem completa com detalhamento por registro e
+              exportação controlada
+            </li>
+          </ul>
+          <p>
+            Na prática, é a página que mais apoia a gestão da agenda no período,
+            tanto para tomada de decisão quanto para controle e auditoria.
+          </p>
+        </div>
+      </section>
+
+      <div class="page-separator" aria-hidden="true"></div>
+
+      <section id="sec3">
+        <h2>3 - 🧾 Resumo · Resumo</h2>
+
+        <p>
+          A página <strong>Resumo · Resumo</strong> é um painel gerencial e
+          cadastral, projetado para oferecer uma visão consolidada da base da
+          clínica, permitindo entender quem são os clientes, quem opera o
+          sistema, quais profissionais estão ativos, quantas especialidades
+          existem e quais convênios fazem parte da operação.
+        </p>
+
+        <p>
+          Ela funciona como um raio-X da estrutura da clínica, combinando
+          indicadores gerais, análises demográficas e geográficas e tabelas
+          detalhadas para consulta, auditoria e exportação.
+        </p>
+
+        <div class="highlight">
+          <h3>🎯 Objetivo da página</h3>
+          <p>
+            O Resumo · Resumo tem como principal objetivo responder perguntas
+            estratégicas como:
+          </p>
+          <ul>
+            <li>
+              Qual o tamanho da base ativa da clínica (clientes, usuários,
+              profissionais e convênios)?
+            </li>
+            <li>Onde estão concentrados os clientes (geograficamente)?</li>
+            <li>
+              Qual é o perfil demográfico dos clientes (sexo e faixa etária)?
+            </li>
+            <li>Como está distribuído o corpo clínico por especialidade?</li>
+            <li>
+              Quem são os clientes, profissionais, usuários e convênios
+              cadastrados e ativos hoje?
+            </li>
+          </ul>
+          <p>
+            Essa página é voltada principalmente para gestão, planejamento,
+            auditoria e análises institucionais.
+          </p>
+        </div>
+
+        <h3>📌 Indicadores do topo (KPIs)</h3>
+        <p>
+          No topo, a página apresenta KPIs de dimensionamento da base, com
+          leitura imediata:
+        </p>
+        <ul>
+          <li>
+            <strong>Clientes</strong>: total de clientes ativos cadastrados.
+          </li>
+          <li>
+            <strong>Usuários</strong>: total de usuários ativos do sistema
+            (recepção, operadores, equipe administrativa, etc.).
+          </li>
+          <li>
+            <strong>Profissionais</strong>: total de profissionais ativos
+            vinculados à clínica.
+          </li>
+          <li>
+            <strong>Especialidades</strong>: quantidade de especialidades
+            associadas aos profissionais.
+          </li>
+          <li>
+            <strong>Convênios</strong>: total de convênios ativos cadastrados.
+          </li>
+        </ul>
+
+        <p>
+          Esses indicadores ajudam a acompanhar o crescimento, estrutura
+          operacional e complexidade da operação.
+        </p>
+
+        <h3>📊 Visões analíticas e demográficas</h3>
+
+        <h4>🔹 Clientes por município / Profissionais por especialidade</h4>
+        <p>Um card analítico com duas visualizações alternáveis:</p>
+        <ul>
+          <li>
+            <strong>Mapa de clientes por município</strong>: exibe a
+            distribuição geográfica dos clientes, permitindo identificar
+            concentração regional, áreas de maior alcance e potencial de
+            expansão.
+          </li>
+          <li>
+            <strong>Profissionais por especialidade</strong>: gráfico de barras
+            verticais mostrando a quantidade de profissionais por especialidade
+            (CBOS), útil para avaliar equilíbrio do corpo clínico e cobertura de
+            serviços.
+          </li>
+        </ul>
+
+        <h4>🔹 Clientes por sexo / Faixa etária dos clientes</h4>
+        <p>
+          Um segundo card com foco no perfil demográfico dos clientes, também
+          com alternância de visão:
+        </p>
+        <ul>
+          <li>
+            <strong>Clientes por sexo</strong>: gráfico de pizza com legenda,
+            mostrando a distribuição entre feminino, masculino e outros/não
+            informado.
+          </li>
+          <li>
+            <strong>Faixa etária dos clientes</strong>: gráfico de barras
+            horizontais apresentando a concentração de clientes por grupos de
+            idade.
+          </li>
+        </ul>
+
+        <p>
+          Essas análises são importantes para planejamento de serviços,
+          campanhas, horários e especialidades.
+        </p>
+
+        <h3>🧭 Visões em abas (Tabelas detalhadas)</h3>
+        <p>
+          Na parte inferior, a página disponibiliza tabelas completas
+          organizadas em abas, permitindo navegação entre diferentes conjuntos
+          de dados:
+        </p>
+
+        <h4>🔹 1) Clientes</h4>
+        <p>Tabela de clientes ativos, com:</p>
+        <ul>
+          <li>paginação</li>
+          <li>ordenação server-side</li>
+          <li>busca por cliente</li>
+          <li>clique no registro para abrir modal de detalhes</li>
+        </ul>
+
+        <p>
+          Campos principais: código, nome, idade, município, UF, primeira e
+          última consulta. O modal de detalhes exibe informações completas do
+          cliente, como dados pessoais, contatos, endereço e histórico de
+          consultas.
+        </p>
+
+        <h4>🔹 2) Usuários</h4>
+        <p>Tabela de usuários ativos do sistema, exibindo:</p>
+        <ul>
+          <li>código</li>
+          <li>nome</li>
+          <li>nome completo</li>
+          <li>função</li>
+        </ul>
+
+        <p>Indicada para controle de acessos, auditoria e governança.</p>
+
+        <h4>🔹 3) Profissionais</h4>
+        <p>Tabela de profissionais ativos, com:</p>
+        <ul>
+          <li>código</li>
+          <li>nome completo</li>
+          <li>nome de exibição</li>
+          <li>conselho</li>
+          <li>CBOS (especialidade)</li>
+        </ul>
+
+        <p>
+          Essa visão apoia a gestão do corpo clínico e conferência cadastral.
+        </p>
+
+        <h4>🔹 4) Convênios</h4>
+        <p>Tabela de convênios ativos, exibindo:</p>
+        <ul>
+          <li>código</li>
+          <li>nome fantasia</li>
+          <li>razão social</li>
+          <li>indicador de particular</li>
+          <li>cidade e UF</li>
+        </ul>
+
+        <p>
+          Essencial para controle comercial, faturamento e integração com
+          relatórios financeiros.
+        </p>
+
+        <h3>🔍 Filtros e controle</h3>
+        <p>A página possui um painel de filtros simples e eficiente:</p>
+        <ul>
+          <li>Busca por Cliente</li>
+          <li>Busca por Profissional</li>
+        </ul>
+
+        <p>
+          Os filtros funcionam em modo Aplicar, evitando recargas desnecessárias
+          e garantindo melhor performance em bases maiores.
+        </p>
+
+        <h3>📤 Exportação e impressão (PDF, Excel e CSV)</h3>
+        <p>
+          O Resumo · Resumo também funciona como uma ferramenta de extração e
+          auditoria de dados, oferecendo:
+        </p>
+        <ul>
+          <li>
+            escolha do conjunto de dados:
+            <ul>
+              <li>Clientes</li>
+              <li>Usuários</li>
+              <li>Profissionais</li>
+              <li>Convênios</li>
+            </ul>
+          </li>
+          <li>seleção de colunas</li>
+          <li>filtros específicos (quando aplicável)</li>
+          <li>
+            formatos disponíveis:
+            <ul>
+              <li>PDF (layout de impressão personalizado)</li>
+              <li>Excel (.xlsx)</li>
+              <li>CSV</li>
+            </ul>
+          </li>
+          <li>
+            registro de log de exportação (usuário, conjunto, colunas, formato e
+            volume)
+          </li>
+        </ul>
+
+        <div class="highlight success">
+          <h3>✅ Por que essa página é importante</h3>
+          <p>
+            O Resumo · Resumo é fundamental porque entrega uma visão macro da
+            clínica, indo além do dia a dia operacional:
+          </p>
+          <ul>
+            <li>consolida o tamanho e a estrutura da base</li>
+            <li>revela o perfil demográfico e geográfico dos clientes</li>
+            <li>
+              permite analisar distribuição de profissionais e especialidades
+            </li>
+            <li>
+              oferece tabelas completas com detalhamento e exportação controlada
+            </li>
+          </ul>
+          <p>
+            Na prática, é a página de referência gerencial e institucional,
+            usada para entender quem é a clínica hoje, como ela está estruturada
+            e como pode planejar seus próximos passos.
+          </p>
+        </div>
+      </section>
+
+      <div class="page-separator" aria-hidden="true"></div>
+
+      <section id="sec4">
+        <h2>4 - 📈 Agendamentos · Resumo</h2>
+
+        <p>
+          A página <strong>Agendamentos · Resumo</strong> é o painel central
+          para acompanhar o desempenho operacional da agenda dentro do período
+          selecionado, permitindo monitorar volume de agendamentos, nível de
+          confirmações, realização do atendimento e o No-Show (faltas).
+        </p>
+
+        <p>
+          Além de medir o resultado, a página também explica onde e como os
+          agendamentos estão acontecendo, facilitando a identificação de
+          gargalos, padrões e oportunidades de melhoria na recepção e na gestão
+          do fluxo.
+        </p>
+
+        <div class="highlight">
+          <h3>🎯 Objetivo da página</h3>
+          <p>
+            O Agendamentos · Resumo foi criado para responder, de forma rápida e
+            objetiva, perguntas como:
+          </p>
+          <ul>
+            <li>
+              Quanto foi agendado no período e quanto realmente virou
+              atendimento?
+            </li>
+            <li>
+              O quanto a clínica está conseguindo confirmar os agendamentos?
+            </li>
+            <li>
+              Qual o nível de faltas (No-Show) e como isso impacta a capacidade?
+            </li>
+            <li>
+              Quais situações da agenda estão mais presentes (confirmado,
+              cancelado, pendente, etc.)?
+            </li>
+            <li>
+              Quais são os profissionais com maior demanda de agendamentos?
+            </li>
+            <li>
+              Quais canais/origens mais geram agendamento (recepção, telefone,
+              WhatsApp, etc.)?
+            </li>
+          </ul>
+          <p>
+            É uma página essencial para gestão operacional, planejamento de
+            capacidade, controle de faltas e melhoria contínua do processo de
+            agenda.
+          </p>
+        </div>
+
+        <h3>📌 Indicadores do topo (KPIs)</h3>
+        <p>
+          No topo, a página traz KPIs com leitura imediata do desempenho no
+          período:
+        </p>
+        <ul>
+          <li>
+            <strong>Agendamentos</strong>: total de agendamentos registrados no
+            intervalo filtrado.
+          </li>
+          <li>
+            <strong>Confirmados</strong>: quantidade de agendamentos
+            confirmados.
+          </li>
+          <li>
+            <strong>Atendidos</strong>: quantos agendamentos efetivamente foram
+            realizados (viraram atendimento).
+          </li>
+          <li>
+            <strong>Atendidos %</strong>: proporção de atendidos em relação ao
+            total de agendamentos.
+          </li>
+          <li>
+            <strong>No-Show %</strong>: complemento do atendido (faltas),
+            indicador crítico de eficiência e ocupação de agenda.
+          </li>
+        </ul>
+
+        <p>
+          ✅ Diferencial importante: cada KPI apresenta também um comparativo
+          “vs mês anterior”, permitindo enxergar variações de volume e
+          performance (crescimento/queda) de forma imediata.
+        </p>
+
+        <h3>🧠 Visões analíticas (padrões e gargalos)</h3>
+
+        <h4>🔹 Resumo por período (Ano / Mês / Dia)</h4>
+        <p>Uma matriz consolidando, por data, os principais indicadores:</p>
+        <ul>
+          <li>Agendamentos</li>
+          <li>Confirmados</li>
+          <li>Atendidos</li>
+          <li>Atendidos %</li>
+          <li>No-Show %</li>
+        </ul>
+
+        <p>
+          Essa visão facilita enxergar picos, sazonalidade, evolução diária e o
+          impacto direto das faltas na agenda.
+        </p>
+
+        <h4>🔹 Análise por Situação</h4>
+        <p>
+          Gráfico de distribuição por Situação da agenda, com cores vindas da
+          própria situação (padronização visual do sistema). Útil para entender
+          o “mix” operacional (ex.: pendente, confirmado, cancelado, encaixe,
+          etc.) e identificar excessos ou distorções no processo.
+        </p>
+
+        <h4>🔹 Qtd por Profissional</h4>
+        <p>Ranking de agendamentos por profissional, apoiando:</p>
+        <ul>
+          <li>análise de demanda</li>
+          <li>distribuição de carga</li>
+          <li>equilíbrio de agenda</li>
+          <li>decisões de escala e disponibilidade</li>
+        </ul>
+
+        <h4>🔹 Agend x Atend</h4>
+        <p>Comparação direta entre:</p>
+        <ul>
+          <li>Atendidos</li>
+          <li>Não atendidos</li>
+        </ul>
+
+        <p>
+          Essa visão evidencia de forma clara o impacto do No-Show e ajuda a
+          guiar ações como confirmação ativa, overbooking controlado e ajustes
+          de agenda.
+        </p>
+
+        <h4>🔹 Por Origem</h4>
+        <p>
+          Distribuição por Origem do agendamento (canal onde foi realizado),
+          apoiando estratégia de captação e operação, como:
+        </p>
+        <ul>
+          <li>recepção</li>
+          <li>telefone</li>
+          <li>WhatsApp</li>
+          <li>outros canais cadastrados</li>
+        </ul>
+
+        <h3>🔍 Filtros disponíveis (refino de análise)</h3>
+        <p>
+          A página conta com filtros robustos para investigação detalhada, com
+          aplicação controlada (modo “Aplicar”):
+        </p>
+        <ul>
+          <li>
+            Período (Data inicial e final)
+            <ul>
+              <li>
+                Regra operacional: intervalo máximo de 3 meses para consulta do
+                painel (performance e responsividade).
+              </li>
+            </ul>
+          </li>
+          <li>Cliente (busca textual)</li>
+          <li>Profissional (multi-seleção)</li>
+          <li>Convênio (multi-seleção)</li>
+          <li>Usuário (multi-seleção)</li>
+          <li>Tipo de Atendimento (multi-seleção)</li>
+          <li>Situação da Agenda (multi-seleção)</li>
+          <li>Procedimento (multi-seleção)</li>
+        </ul>
+
+        <p>
+          Esses filtros permitem cruzar dimensões operacionais e encontrar
+          gargalos específicos (por exemplo: faltas por profissional, por
+          convênio ou por tipo de atendimento).
+        </p>
+
+        <h3>📋 Tabela de Agendamentos (detalhamento completo)</h3>
+        <p>A página possui uma Tabela de Agendamentos completa, com:</p>
+        <ul>
+          <li>paginação</li>
+          <li>ordenação server-side</li>
+          <li>
+            ordenação padrão por registros mais recentes (Data Agenda DESC +
+            Hora DESC)
+          </li>
+          <li>visualização facilitada com ícones (cliente e profissional)</li>
+          <li>badges de Situação e Tipo Atendimento com cores padronizadas</li>
+        </ul>
+
+        <p>
+          Ao clicar em um registro, abre uma modal de Detalhes do agendamento,
+          exibindo informações completas como:
+        </p>
+        <ul>
+          <li>datas (registro e agenda), hora</li>
+          <li>cliente, profissional, convênio, procedimento</li>
+          <li>situação e usuário responsável</li>
+          <li>origem do agendamento</li>
+          <li>confirmação (sim/não), data e responsável</li>
+          <li>protocolo do agendamento</li>
+        </ul>
+
+        <p>
+          Essa tabela torna o painel útil também para conferência operacional,
+          auditoria, checagem de inconsistências e validação de informações com
+          recepção/gestão.
+        </p>
+
+        <h3>📤 Exportação / Impressão (PDF, Excel e CSV)</h3>
+        <p>O Agendamentos · Resumo oferece exportação com controle total:</p>
+        <ul>
+          <li>seleção de período e filtros (os mesmos da análise)</li>
+          <li>seleção de colunas</li>
+          <li>
+            formatos disponíveis:
+            <ul>
+              <li>PDF (layout de impressão personalizado)</li>
+              <li>Excel (.xlsx)</li>
+              <li>CSV</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p>📌 Regras de exportação:</p>
+        <ul>
+          <li>
+            permite exportar até 12 meses (com aviso de que acima de 3 meses
+            pode demorar mais)
+          </li>
+          <li>
+            registrar log de exportação (setor/página, formato, período,
+            filtros, colunas e volume)
+          </li>
+        </ul>
+
+        <div class="highlight success">
+          <h3>✅ Por que essa página é importante</h3>
+          <p>
+            O Agendamentos · Resumo é uma das páginas mais estratégicas do
+            módulo porque conecta agenda ↔ atendimento, evidenciando:
+          </p>
+          <ul>
+            <li>eficiência operacional (atendidos/confirmados)</li>
+            <li>impacto do No-Show na capacidade</li>
+            <li>distribuição de demanda (profissionais)</li>
+            <li>qualidade do processo de agenda (situações e confirmações)</li>
+            <li>efetividade dos canais de agendamento (origem)</li>
+          </ul>
+          <p>
+            Na prática, é o painel ideal para gestão de capacidade, redução de
+            faltas e melhoria contínua do fluxo de agendamentos.
+          </p>
+        </div>
+      </section>
+
+      <div class="page-separator" aria-hidden="true"></div>
+
+      <section id="sec5">
+        <h2>5 - 👩‍💼 Agendamentos · Atendente</h2>
+
+        <p>
+          A página <strong>Agendamentos / Atendente</strong> foi criada para
+          avaliar o desempenho operacional por usuário (atendente) no processo
+          de agendamento dentro do período selecionado. Ela centraliza a análise
+          de volume, qualidade da confirmação, realização do atendimento e
+          No-Show, permitindo entender como cada atendente está gerando agenda,
+          quais padrões se repetem e onde existem gargalos (ex.: muitos
+          agendamentos não atendidos, excesso de cancelamentos ou perfil de
+          origem concentrado).
+        </p>
+
+        <p>
+          Um diferencial importante desta página é que os dados são sempre
+          exibidos a partir de um atendente selecionado, com suporte a
+          foto/perfil do usuário, o que torna a leitura mais direta para gestão
+          de recepção/central de atendimento e para acompanhamento de
+          performance individual.
+        </p>
+
+        <h3>📌 Indicadores do topo (KPIs)</h3>
+        <p>
+          No topo, a página traz KPIs que dão leitura imediata do resultado do
+          atendente no período:
+        </p>
+        <ul>
+          <li>
+            <strong>Agendamentos</strong>: total de registros de agenda no
+            período filtrado para o atendente selecionado.
+          </li>
+          <li>
+            <strong>Confirmados</strong>: quantidade de agendamentos que
+            receberam confirmação.
+          </li>
+          <li>
+            <strong>Atendidos</strong>: quantos agendamentos efetivamente
+            viraram atendimento.
+          </li>
+          <li>
+            <strong>Atendidos %</strong>: proporção de atendidos em relação ao
+            total agendado.
+          </li>
+          <li>
+            <strong>No-Show %</strong>: complemento do atendido (não
+            comparecimento / agendado que não virou atendimento), essencial para
+            medir eficiência e uso de capacidade.
+          </li>
+        </ul>
+
+        <p>
+          Além disso, cada KPI exibe um comparativo vs. mês anterior, destacando
+          variação percentual para facilitar a gestão por tendência (melhorando
+          ou piorando).
+        </p>
+
+        <h3>🧠 Visões de análise (para identificar padrões e gargalos)</h3>
+        <p>
+          Como apoio, o painel oferece blocos analíticos que ajudam a explicar
+          “onde está o problema” e “o que está puxando o resultado”:
+        </p>
+
+        <h4>🔹 1) Resumo por período (Ano / Mês / Dia)</h4>
+        <p>
+          Uma matriz consolidando Agendamentos, Confirmados e Atendidos, além de
+          Atendidos % e No-Show %, permitindo enxergar picos, sazonalidade e
+          evolução diária do atendente (muito útil para entender dias críticos e
+          comportamento do fluxo).
+        </p>
+
+        <h4>🔹 2) Qtd agendamentos por profissional (ranking)</h4>
+        <p>
+          Alterna com o resumo por período e exibe a distribuição de
+          agendamentos do atendente por profissional, apoiando análise de
+          demanda, distribuição de carga e possíveis vieses (ex.: atendente
+          concentrando agenda em poucos profissionais).
+        </p>
+
+        <h4>🔹 3) Análise por Situação</h4>
+        <p>
+          Gráfico com a distribuição por Situação da agenda (com cores
+          associadas à própria situação), útil para entender o “mix” operacional
+          (confirmado, pendente, cancelado, etc.) e localizar gargalos por
+          status.
+        </p>
+
+        <h4>🔹 4) Agend x Atend</h4>
+        <p>
+          Comparação direta entre o que foi agendado e o que foi realizado
+          (Atendidos vs Não atendidos), deixando evidente o impacto do No-Show
+          no resultado do atendente.
+        </p>
+
+        <h4>🔹 5) Por Origem</h4>
+        <p>
+          Visão de origem do agendamento (canal), ajudando a entender como esse
+          atendente está operando: recepção, telefone, WhatsApp, etc. Isso é
+          valioso para estratégia de canais, treinamento e padronização.
+        </p>
+
+        <h3>🧩 Filtros e recortes disponíveis</h3>
+        <p>
+          A página possui um painel robusto de filtros, permitindo análises bem
+          específicas do atendente:
+        </p>
+        <ul>
+          <li>
+            Período (Data inicial e final) com validação operacional (intervalo
+            recomendado para análise e carregamento).
+          </li>
+          <li>Cliente (busca textual)</li>
+          <li>Profissional (multi seleção)</li>
+          <li>Convênio (multi seleção)</li>
+          <li>Tipo de Atendimento (multi seleção)</li>
+          <li>Procedimento (multi seleção)</li>
+          <li>
+            Usuário (atendente) com seleção controlada (foco em 1 atendente por
+            vez)
+          </li>
+        </ul>
+
+        <p>
+          Esse conjunto torna a página útil tanto para visão gerencial quanto
+          para investigações rápidas (ex.: “como está o No-Show do atendente X
+          em convênio Y?”).
+        </p>
+
+        <h3>📋 Tabela detalhada (auditoria e operação)</h3>
+        <p>
+          Além dos gráficos, a página oferece uma Tabela de Agendamentos
+          completa e filtrável, com:
+        </p>
+        <ul>
+          <li>Paginação</li>
+          <li>Ordenação server-side</li>
+          <li>Clique para detalhamento em modal</li>
+          <li>
+            Campos como cliente, profissional, convênio, tipo de atendimento,
+            situação, usuário, datas/horário e confirmação.
+          </li>
+        </ul>
+
+        <p>
+          Essa tabela é essencial para auditoria, conferência de
+          inconsistências, acompanhamento da recepção e validação de casos
+          específicos.
+        </p>
+
+        <h3>📤 Exportação / impressão (PDF, Excel e CSV)</h3>
+        <p>Por fim, a página suporta exportação e impressão, permitindo:</p>
+        <ul>
+          <li>Definir período (com limite maior para exportação)</li>
+          <li>Aplicar filtros adicionais</li>
+          <li>Selecionar colunas desejadas</li>
+          <li>Gerar em PDF (layout de impressão), Excel (.xlsx) ou CSV</li>
+        </ul>
+
+        <div class="highlight success">
+          <h3>✅ Em resumo</h3>
+          <p>
+            A página Agendamentos / Atendente é o painel ideal para gestão de
+            performance individual, conectando indicadores de eficiência
+            (Atendidos/No-Show) com explicações operacionais (Situação, Origem,
+            Profissional) e com uma base detalhada para auditoria e exportação.
+          </p>
+        </div>
+      </section>
+
+      <div class="page-separator" aria-hidden="true"></div>
+
+      <section id="sec6">
+        <h2>6 - 👩‍💼👩‍💼 Agendamentos · Atendentes (Geral)</h2>
+
+        <p>
+          A página <strong>Agendamentos / Atendentes (Geral)</strong> foi criada
+          para oferecer uma visão consolidada do desempenho de todos os
+          atendentes no período selecionado, permitindo comparar rapidamente
+          volume, confirmações, realização do atendimento e No-Show por usuário.
+        </p>
+
+        <p>
+          Ela é especialmente útil para gestão da recepção/central de
+          agendamento, pois evidencia diferenças de performance entre
+          atendentes, aponta desvios e ajuda a direcionar ações de treinamento,
+          padronização e acompanhamento operacional.
+        </p>
+
+        <p>
+          Ao invés de analisar um atendente individualmente, aqui o foco é
+          comparativo e gerencial: entender quem mais agenda, quem mais
+          confirma, quem tem melhor taxa de atendidos e onde o No-Show está mais
+          impactando.
+        </p>
+
+        <h3>📌 Indicadores e métricas acompanhadas (por atendente)</h3>
+        <p>A análise é estruturada em colunas de indicadores por usuário:</p>
+        <ul>
+          <li>
+            <strong>Agendamentos</strong>: quantidade total de agendamentos
+            gerados no período.
+          </li>
+          <li>
+            <strong>Confirmados</strong>: quantos desses agendamentos foram
+            confirmados.
+          </li>
+          <li>
+            <strong>Atendidos</strong>: quantos efetivamente viraram
+            atendimento.
+          </li>
+          <li>
+            <strong>Atendidos %</strong>: proporção de atendidos em relação ao
+            total agendado (indicador de qualidade/efetividade).
+          </li>
+          <li>
+            <strong>No-Show %</strong>: complemento do atendido (faltas /
+            agendado que não virou atendimento), crucial para medir eficiência e
+            impacto na capacidade.
+          </li>
+        </ul>
+
+        <h3>🏁 Visão principal: ranking comparativo de atendentes</h3>
+        <p>
+          O painel se baseia em uma tabela analítica por atendente, que funciona
+          como um ranking consolidado:
+        </p>
+        <ul>
+          <li>
+            Exibe todos os atendentes (com nome e avatar, quando disponível).
+          </li>
+          <li>Consolida os totais do período por usuário.</li>
+          <li>
+            Permite leitura rápida de quem está puxando o volume e quem está
+            puxando o No-Show.
+          </li>
+          <li>
+            Facilita identificar padrões como:
+            <ul>
+              <li>
+                atendentes com alto volume, mas baixa efetividade (Atendidos %
+                menor),
+              </li>
+              <li>atendentes com ótima conversão em atendimento,</li>
+              <li>
+                necessidade de revisão de confirmação/fluxo em usuários
+                específicos.
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <p>
+          Essa visão é ideal para reuniões de gestão e acompanhamento
+          semanal/diário do time.
+        </p>
+
+        <h3>🧩 Filtros e recortes disponíveis</h3>
+        <p>
+          A página conta com filtros voltados para análise gerencial, permitindo
+          comparar atendentes em cenários específicos:
+        </p>
+        <ul>
+          <li>
+            Período (Data inicial e final) com limite operacional recomendado
+            (até 3 meses para manter performance e consistência).
+          </li>
+          <li>
+            Convênio (multi seleção) para avaliar comportamento por convênio
+            (ex.: convênios com maior No-Show).
+          </li>
+          <li>
+            Profissional (quando aplicável na construção do relatório) para
+            recortar demanda por agenda vinculada ao profissional.
+          </li>
+        </ul>
+
+        <p>
+          Esses filtros ajudam a responder perguntas do tipo: “Qual atendente
+          tem mais No-Show no convênio X?” ou “Como está a efetividade do time
+          neste mês?”.
+        </p>
+
+        <h3>📤 Exportação / impressão (PDF, Excel e CSV)</h3>
+        <p>
+          Por fim, a página oferece exportação e impressão do resumo consolidado
+          por atendente, permitindo:
+        </p>
+        <ul>
+          <li>
+            Definir período (com limite maior para exportação, até 12 meses).
+          </li>
+          <li>Aplicar filtros (ex.: convênio).</li>
+          <li>Selecionar quais colunas entram no arquivo.</li>
+          <li>Gerar em PDF (layout de impressão), Excel (.xlsx) ou CSV.</li>
+        </ul>
+
+        <div class="highlight success">
+          <h3>✅ Em resumo</h3>
+          <p>
+            A página Agendamentos / Atendentes (Geral) é o painel de referência
+            para comparar performance do time de atendimento, conectando volume
+            (agendamentos) com qualidade (confirmados/atendidos) e eficiência
+            operacional (No-Show), com filtros estratégicos e exportação pronta
+            para gestão.
+          </p>
+        </div>
+      </section>
+
+      <div class="page-separator" aria-hidden="true"></div>
+
+      <section id="sec7">
+        <h2>7 - 🩺 Atendimentos · Resumo</h2>
+
+        <p>
+          A página <strong>Atendimentos / Resumo</strong> é o painel central
+          para acompanhar, em um único lugar, o volume de atendimentos
+          realizados no período selecionado e os principais indicadores de
+          eficiência operacional, tempo de fluxo e resultado financeiro.
+        </p>
+
+        <p>
+          Ela permite entender não só “quanto” foi atendido, mas também como foi
+          o desempenho do atendimento (tempos médios), qual o ticket médio,
+          quantos cancelamentos ocorreram e como esse volume se distribui por
+          período, profissionais e convênios.
+        </p>
+
+        <p>
+          É uma página muito utilizada por gestão e coordenação, pois entrega
+          leitura rápida do cenário e também detalhamento para investigação
+          (drill-down) quando há picos, quedas, atrasos, aumento de
+          cancelamentos ou mudanças no ticket.
+        </p>
+
+        <h3>📌 Indicadores do topo (KPIs)</h3>
+        <p>
+          No topo, a página traz KPIs que dão leitura imediata do desempenho do
+          período — com comparação vs mês anterior para contextualizar evolução:
+        </p>
+        <ul>
+          <li>
+            <strong>Atendimentos</strong>: total de atendimentos no período.
+          </li>
+          <li>
+            <strong>TME (Tempo Médio de Espera)</strong>: tempo médio até o
+            atendimento iniciar (indicador direto de fila/atraso e experiência
+            do paciente).
+          </li>
+          <li>
+            <strong>TMA (Tempo Médio de Atendimento)</strong>: duração média do
+            atendimento (impacta capacidade produtiva e tempo de agenda).
+          </li>
+          <li>
+            <strong>Ticket Médio</strong>: valor médio por atendimento (visão
+            financeira do período).
+          </li>
+          <li>
+            <strong>Cancelamentos</strong>: total de atendimentos cancelados no
+            período (impacto operacional e financeiro).
+          </li>
+        </ul>
+
+        <p>
+          Cada KPI traz uma etiqueta de variação (“% vs mês anterior”), ajudando
+          a identificar rapidamente tendências como aumento de espera, aumento
+          de ticket ou crescimento de cancelamentos.
+        </p>
+
+        <h3>🧠 Análises e visões para identificar padrões e gargalos</h3>
+
+        <h4>🔹 Resumo por período (Ano / Mês / Dia)</h4>
+        <p>
+          Uma matriz consolidada que organiza os indicadores por hierarquia de
+          tempo, permitindo enxergar sazonalidade, picos e evolução diária.
+        </p>
+        <p>Nessa visão, são acompanhados:</p>
+        <ul>
+          <li>Atendimentos</li>
+          <li>TME (média)</li>
+          <li>TMA (média)</li>
+          <li>Ticket Médio (média)</li>
+          <li>Cancelamentos</li>
+        </ul>
+
+        <p>
+          Essa matriz é ideal para responder perguntas como: “Em quais dias o
+          TME piorou?” / “Quando o ticket subiu?” / “Quais datas concentraram
+          cancelamentos?”.
+        </p>
+
+        <h4>🔹 Atendimentos por Profissional (Executante e Solicitante)</h4>
+        <p>Gráficos de ranking que mostram distribuição de atendimentos por:</p>
+        <ul>
+          <li>Profissional Executante (quem realizou)</li>
+          <li>Profissional Solicitante (quem solicitou)</li>
+        </ul>
+
+        <p>
+          Essas visões apoiam análise de demanda por profissional, carga
+          assistencial e variações de volume por equipe.
+        </p>
+
+        <h4>🔹 Atendimentos por Convênio</h4>
+        <p>
+          Um ranking (barras horizontais) que mostra como o volume de
+          atendimentos se distribui por convênio, permitindo avaliar
+          concentração de demanda e apoiar decisões de gestão de carteira,
+          negociação e planejamento de capacidade.
+        </p>
+
+        <h3>📋 Listagem detalhada de atendimentos (tabela)</h3>
+        <p>
+          Além do resumo, a página possui uma tabela completa e filtrável, com:
+        </p>
+        <ul>
+          <li>Paginação e ordenação server-side</li>
+          <li>
+            Campos principais do atendimento e do financeiro, como:
+            <ul>
+              <li>Data do atendimento</li>
+              <li>Situação do atendimento (com badge colorido)</li>
+              <li>Cliente e idade</li>
+              <li>Usuário</li>
+              <li>Convênio</li>
+              <li>Profissional executante e solicitante</li>
+              <li>Valor total</li>
+              <li>Situação financeira (pago/aberto/cancelado, etc.)</li>
+              <li>Data de pagamento</li>
+              <li>Tipo de atendimento (com cor própria)</li>
+              <li>Procedimento</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p>
+          Ao clicar em um registro, abre um modal de detalhes com informações
+          completas do atendimento (incluindo códigos, sequências, valores
+          detalhados, descontos, responsável pelo recebimento e demais campos de
+          auditoria).
+        </p>
+
+        <h3>🧩 Filtros e recortes disponíveis</h3>
+        <p>
+          A página permite refinar a análise com filtros que combinam visão
+          assistencial e financeira:
+        </p>
+        <ul>
+          <li>
+            Período (Data inicial e final) com limite recomendado de até 3 meses
+            para performance e consistência.
+          </li>
+          <li>Cliente (busca textual)</li>
+          <li>Convênio (multi seleção)</li>
+          <li>Tipo de Atendimento (multi seleção)</li>
+          <li>Usuário (multi seleção)</li>
+          <li>Prof. Executante (multi seleção)</li>
+          <li>Prof. Solicitante (multi seleção)</li>
+        </ul>
+
+        <p>
+          Os filtros funcionam com lógica de Aplicar / Limpar / Recarregar,
+          garantindo controle do usuário sobre quando atualizar os dados.
+        </p>
+
+        <h3>📤 Exportação / impressão (PDF, Excel e CSV)</h3>
+        <p>Por fim, a página oferece exportação/impressão com:</p>
+        <ul>
+          <li>Seleção de período (permitindo até 12 meses para exportação)</li>
+          <li>
+            Aplicação de filtros (cliente, convênio, tipo, usuário,
+            profissionais)
+          </li>
+          <li>Seleção de colunas incluídas</li>
+          <li>Formatos disponíveis: PDF, Excel (.xlsx) e CSV</li>
+        </ul>
+
+        <div class="highlight success">
+          <h3>✅ Em resumo</h3>
+          <p>
+            A página Atendimentos / Resumo conecta produção assistencial +
+            eficiência operacional + resultado financeiro, oferecendo KPIs com
+            comparação temporal, análises por período/profissionais/convênio e
+            uma tabela detalhada com drill-down, além de exportação completa
+            para gestão e auditoria.
+          </p>
+        </div>
+      </section>
+
+      <div class="page-separator" aria-hidden="true"></div>
+
+      <section id="sec8">
+        <h2>8 - 🎫 Atendimentos · Senhas</h2>
+
+        <p>
+          A página <strong>Atendimentos / Senhas</strong> é o painel dedicado ao
+          acompanhamento do fluxo de atendimento por senhas, permitindo analisar
+          volume, prioridade, tempo médio de espera na recepção (TME) e a
+          distribuição do atendimento ao longo do tempo.
+        </p>
+
+        <p>
+          Ela é essencial para entender como a fila está se comportando,
+          identificar gargalos na recepção e avaliar a experiência do paciente
+          desde a chegada até o início do atendimento.
+        </p>
+
+        <p>
+          Essa página é amplamente utilizada por coordenação, recepção e gestão,
+          pois conecta volume operacional com tempo de espera e priorização,
+          apoiando decisões de escala, organização de guichês e ajustes no
+          fluxo.
+        </p>
+
+        <h3>📌 Indicadores do topo (KPIs)</h3>
+        <p>
+          No topo, a página apresenta KPIs que oferecem leitura imediata do
+          cenário de senhas no período selecionado:
+        </p>
+        <ul>
+          <li>
+            <strong>Senhas</strong>: quantidade total de senhas geradas no
+            período.
+          </li>
+          <li>
+            <strong>Média/hora</strong>: média de senhas geradas por hora,
+            indicando intensidade do fluxo.
+          </li>
+          <li>
+            <strong>Prioridade</strong>: total de senhas classificadas como
+            prioritárias.
+          </li>
+          <li>
+            <strong>Prioridade %</strong>: proporção de senhas prioritárias em
+            relação ao total.
+          </li>
+          <li>
+            <strong>TME Recepção</strong>: tempo médio de espera na recepção (do
+            registro da senha até o início do atendimento).
+          </li>
+        </ul>
+
+        <p>
+          Esses indicadores ajudam a avaliar pressão de demanda, perfil do
+          público (prioritário vs comum) e qualidade do atendimento inicial.
+        </p>
+
+        <h3>🧠 Análises para identificação de padrões e gargalos</h3>
+
+        <h4>🔹 Resumo por período (Ano / Mês / Dia)</h4>
+        <p>Uma matriz consolidada que apresenta, por período:</p>
+        <ul>
+          <li>Quantidade de senhas</li>
+          <li>Média de senhas por hora</li>
+          <li>Total de senhas prioritárias</li>
+          <li>Percentual de prioridade</li>
+          <li>TME da recepção</li>
+        </ul>
+
+        <p>
+          Essa visão facilita identificar picos de movimento, sazonalidade, dias
+          críticos e variações no tempo de espera.
+        </p>
+
+        <h4>🔹 Senhas por profissional</h4>
+        <p>
+          Gráfico de barras verticais exibindo a quantidade de senhas associadas
+          a cada profissional, ajudando a analisar:
+        </p>
+        <ul>
+          <li>concentração de demanda</li>
+          <li>distribuição de carga</li>
+          <li>impacto do fluxo de recepção sobre profissionais específicos</li>
+        </ul>
+
+        <h4>🔹 TME por tipo de senha</h4>
+        <p>
+          Gráfico de pizza com legenda completa que mostra o tempo médio de
+          espera por tipo de senha (ex.: comum, retorno, prioridade, etc.),
+          permitindo entender quais tipos de atendimento geram maior espera e
+          onde ajustar o fluxo.
+        </p>
+
+        <h4>🔹 Senhas por usuário</h4>
+        <p>
+          Gráfico de barras horizontais exibindo a quantidade de senhas por
+          usuário responsável, apoiando análise operacional da recepção e
+          distribuição de trabalho entre atendentes.
+        </p>
+
+        <h3>🧾 Visões de detalhe: tabela e matriz por horário</h3>
+
+        <h4>🔹 Tabela de Senhas</h4>
+        <p>Uma tabela completa e filtrável, com:</p>
+        <ul>
+          <li>Paginação e ordenação server-side</li>
+          <li>Destaque visual por tipo de senha</li>
+          <li>
+            Campos como:
+            <ul>
+              <li>Data/Hora</li>
+              <li>Última chamada</li>
+              <li>Entrada</li>
+              <li>Senha</li>
+              <li>Tipo</li>
+              <li>Prioridade</li>
+              <li>Maior de 80</li>
+              <li>Atendido</li>
+              <li>Cliente</li>
+              <li>Profissional</li>
+              <li>Guichê</li>
+              <li>Responsável</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p>
+          Essa tabela é indicada para auditoria, conferência de registros e
+          análise de casos específicos.
+        </p>
+
+        <h4>🔹 Matriz por Horário × Data</h4>
+        <p>
+          Uma matriz visual (heatmap) que cruza horários com datas, exibindo a
+          quantidade de senhas em cada combinação.
+        </p>
+
+        <p>Essa visão facilita identificar:</p>
+        <ul>
+          <li>horários mais críticos do dia</li>
+          <li>concentração de fluxo por faixa horária</li>
+          <li>padrões recorrentes de pico ao longo da semana ou do mês</li>
+        </ul>
+
+        <h3>🧩 Filtros e recortes disponíveis</h3>
+        <p>
+          A página conta com um painel de filtros robusto, permitindo análises
+          detalhadas:
+        </p>
+        <ul>
+          <li>
+            Período (Data inicial e final) – com limite operacional de até 3
+            meses
+          </li>
+          <li>Cliente (busca textual)</li>
+          <li>Usuário (multi seleção)</li>
+          <li>Profissional (multi seleção)</li>
+          <li>Tipo de Senha (multi seleção)</li>
+          <li>Apenas senhas prioritárias (checkbox)</li>
+        </ul>
+
+        <p>
+          Os filtros funcionam no modo Aplicar / Limpar / Recarregar, garantindo
+          controle e performance nas consultas.
+        </p>
+
+        <h3>📤 Exportação / impressão (PDF, Excel e CSV)</h3>
+        <p>
+          O Atendimentos / Senhas também permite exportação e impressão dos
+          dados, com:
+        </p>
+        <ul>
+          <li>Seleção de período (até 12 meses para exportação)</li>
+          <li>Aplicação de filtros</li>
+          <li>Seleção de colunas</li>
+          <li>
+            Formatos disponíveis:
+            <ul>
+              <li>PDF (layout de impressão personalizado)</li>
+              <li>Excel (.xlsx)</li>
+              <li>CSV</li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="highlight success">
+          <h3>✅ Em resumo</h3>
+          <p>
+            A página Atendimentos / Senhas é o painel ideal para gestão do fluxo
+            de recepção, conectando volume de senhas, prioridade e tempo de
+            espera, com análises por período, horário, profissional e usuário,
+            além de detalhamento completo e exportação para controle e tomada de
+            decisão.
+          </p>
+        </div>
+      </section>
+
+      <div class="page-separator" aria-hidden="true"></div>
+
+      <section id="sec9">
+        <h2>9 - ❌ Atendimentos · Cancelamentos</h2>
+
+        <p>
+          A página <strong>Atendimentos / Cancelamentos</strong> é o painel
+          dedicado a monitorar e analisar cancelamentos de atendimentos dentro
+          do período selecionado, permitindo entender quantidade, impacto
+          financeiro, responsáveis e motivos dos cancelamentos — além de
+          relacionar o cancelamento com o contexto do atendimento (situação,
+          tipo, profissional, convênio e procedimento).
+        </p>
+
+        <p>
+          Ela é fundamental para gestão operacional e financeira, pois evidencia
+          perdas de receita, falhas de processo, problemas de agenda/fluxo e
+          padrões recorrentes que afetam a eficiência da clínica.
+        </p>
+
+        <h3>🌡️ Indicadores e resumo executivo (KPI Highlight)</h3>
+        <p>
+          No topo, a página apresenta um resumo consolidado com leitura imediata
+          do cenário:
+        </p>
+        <ul>
+          <li>Total de cancelamentos no período.</li>
+          <li>
+            Taxa de cancelamento (%): proporção de cancelamentos em relação ao
+            total de eventos do período (cancelamentos + atendimentos).
+          </li>
+          <li>
+            Valor total cancelado (R$): soma do valor financeiro associado aos
+            cancelamentos, importante para medir impacto direto na receita.
+          </li>
+        </ul>
+
+        <p>
+          Esse bloco é o “termômetro” do período, permitindo avaliar rapidamente
+          se o cancelamento está em nível esperado ou acima do normal.
+        </p>
+
+        <h3>🧠 Análises para identificar padrões e causas</h3>
+
+        <h4>🔹 Cancelamentos por dia (Matriz)</h4>
+        <p>Uma matriz por período (dia) com duas métricas principais:</p>
+        <ul>
+          <li>Cancelamentos (quantidade)</li>
+          <li>Valor total (R$)</li>
+        </ul>
+
+        <p>
+          Essa visão facilita enxergar dias críticos, sazonalidade e o impacto
+          financeiro distribuído ao longo do mês, permitindo diferenciar “muitos
+          cancelamentos pequenos” de “poucos cancelamentos com grande valor”.
+        </p>
+
+        <h4>🔹 Cancelamentos por profissional</h4>
+        <p>
+          Gráfico de barras verticais com o ranking de cancelamentos por
+          profissional, apoiando:
+        </p>
+        <ul>
+          <li>análise de concentração de cancelamentos por executante</li>
+          <li>
+            investigação de gargalos (agenda, atrasos, perfil de atendimento,
+            disponibilidade)
+          </li>
+          <li>
+            ações corretivas direcionadas (comunicação, confirmação, ajuste de
+            slots)
+          </li>
+        </ul>
+
+        <h4>🔹 Por responsável (usuário) × Por motivo (abas)</h4>
+        <p>
+          No painel lateral, a página traz duas análises complementares em abas:
+        </p>
+        <ul>
+          <li>
+            <strong>Por responsável</strong>: ranking de cancelamentos por
+            usuário (quem realizou o cancelamento), útil para auditoria de
+            processo e controle operacional.
+          </li>
+          <li>
+            <strong>Por motivo</strong>: ranking por motivo de cancelamento,
+            essencial para entender causas raiz (ex.: desistência,
+            reagendamento, falta, erro de cadastro, indisponibilidade, etc.) e
+            orientar melhorias.
+          </li>
+        </ul>
+
+        <h3>📋 Tabela completa de cancelamentos (com detalhamento)</h3>
+        <p>
+          A página inclui uma Tabela de Cancelamentos completa e filtrável, com:
+        </p>
+        <ul>
+          <li>Paginação e ordenação server-side</li>
+          <li>Clique na linha para abrir detalhamento do registro (modal)</li>
+        </ul>
+
+        <p>Campos principais na tabela:</p>
+        <ul>
+          <li>Data do atendimento e data do cancelamento</li>
+          <li>Responsável e motivo do cancelamento</li>
+          <li>Cliente, usuário, convênio</li>
+          <li>Profissional executante</li>
+          <li>Valor total</li>
+          <li>Situação financeira</li>
+          <li>Tipo de atendimento e procedimento</li>
+        </ul>
+
+        <h3>🪟 Modal de detalhes</h3>
+        <p>
+          No detalhamento do registro, são exibidas informações completas para
+          auditoria e conferência, como:
+        </p>
+        <ul>
+          <li>Situação do atendimento e situação financeira</li>
+          <li>
+            Código/seq do cliente, idade, profissionais solicitante/executante
+          </li>
+          <li>
+            Valores (procedimento, geral, desconto, total), data de pagamento e
+            responsável do recebimento
+          </li>
+          <li>Tipo de atendimento com destaque visual (cor)</li>
+        </ul>
+
+        <p>
+          Essa camada torna a página muito útil para auditoria, rastreabilidade
+          e análise de casos específicos.
+        </p>
+
+        <h3>🧩 Filtros e recortes disponíveis</h3>
+        <p>
+          O painel de filtros permite análises direcionadas e comparações
+          consistentes:
+        </p>
+        <ul>
+          <li>
+            Período (Data inicial e final) – com limite operacional de até 3
+            meses na consulta da página
+          </li>
+          <li>Cliente (busca textual)</li>
+          <li>Convênio (multi seleção)</li>
+          <li>Tipo de atendimento (multi seleção)</li>
+          <li>Usuário (multi seleção)</li>
+          <li>Profissional executante (multi seleção)</li>
+          <li>Profissional solicitante (multi seleção)</li>
+        </ul>
+
+        <p>
+          Os filtros funcionam no padrão Aplicar / Limpar / Recarregar,
+          garantindo controle e performance na navegação.
+        </p>
+
+        <h3>📤 Exportação / impressão (PDF, Excel e CSV)</h3>
+        <p>A página também oferece exportação/impressão com:</p>
+        <ul>
+          <li>Configuração de período (até 12 meses para exportação)</li>
+          <li>Aplicação de filtros</li>
+          <li>Seleção de colunas</li>
+          <li>
+            Formatos disponíveis:
+            <ul>
+              <li>PDF (layout de impressão personalizado)</li>
+              <li>Excel (.xlsx)</li>
+              <li>CSV</li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="highlight success">
+          <h3>✅ Em resumo</h3>
+          <p>
+            A página Atendimentos / Cancelamentos é essencial para controlar
+            perdas e eficiência, conectando volume de cancelamentos, taxa (%),
+            impacto financeiro, responsáveis e motivos, com análises por período
+            e profissional, além de detalhamento completo e exportação para
+            auditoria e gestão.
+          </p>
+        </div>
+      </section>
+
+      <div class="page-separator" aria-hidden="true"></div>
+
+      <section id="sec10">
+        <h2>10 - 👩‍💼 Atendimentos · Recepcionista</h2>
+
+        <p>
+          A página <strong>Atendimentos / Recepcionista</strong> foi criada para
+          avaliar a performance operacional individual dos
+          recepcionistas/atendentes dentro do período selecionado, permitindo
+          enxergar volume de atendimentos, produtividade diária, tempo médio de
+          espera (TME), ticket médio, e cancelamentos associados — tudo sempre
+          com foco em gestão de eficiência, qualidade do fluxo e tomada de
+          decisão na recepção.
+        </p>
+
+        <p>
+          Diferente de um resumo geral do setor, aqui a análise é centrada em um
+          usuário específico (selecionado no filtro), tornando a página ideal
+          para coordenação de recepção, acompanhamento de metas, feedback
+          individual e comparação de desempenho.
+        </p>
+
+        <h3>📌 Indicadores do topo (KPIs)</h3>
+        <p>
+          No topo, a página apresenta KPIs que entregam leitura imediata do
+          desempenho do recepcionista selecionado no período:
+        </p>
+        <ul>
+          <li>
+            <strong>Atendimentos</strong>: total de atendimentos realizados no
+            período pelo usuário selecionado.
+          </li>
+          <li>
+            <strong>Média/dia</strong>: média de atendimentos por dia
+            (produtividade diária).
+          </li>
+          <li>
+            <strong>TME</strong>: Tempo Médio de Espera, trazendo um indicador
+            direto de eficiência no atendimento e fluidez do processo.
+          </li>
+          <li>
+            <strong>Ticket Médio</strong>: valor médio por atendimento
+            (indicador importante para percepção de valor e perfil de
+            atendimentos realizados).
+          </li>
+          <li>
+            <strong>Cancelamentos</strong>: total de cancelamentos associados ao
+            período/usuário, ajudando a identificar possíveis gargalos de fluxo
+            ou problemas operacionais.
+          </li>
+        </ul>
+
+        <p>
+          📌 Comparativo com mês anterior: cada KPI exibe também uma variação
+          percentual vs. mês anterior, facilitando identificar evolução, queda
+          de performance ou sazonalidade.
+        </p>
+
+        <h3>🧠 Resumo por período (Ano / Mês / Dia)</h3>
+        <p>
+          Como base de análise, o painel traz uma matriz consolidada por período
+          (expandível em ano → mês → dia) reunindo os principais indicadores:
+        </p>
+        <ul>
+          <li>Atendimentos</li>
+          <li>Média/dia</li>
+          <li>TME</li>
+          <li>Ticket Médio</li>
+          <li>Cancelamentos</li>
+        </ul>
+
+        <p>Essa visão é extremamente útil para identificar:</p>
+        <ul>
+          <li>picos e quedas de produtividade,</li>
+          <li>padrões de desempenho ao longo das semanas,</li>
+          <li>impacto de sazonalidade e dias atípicos,</li>
+          <li>correlação entre aumento de volume e piora de TME.</li>
+        </ul>
+
+        <h3>🧩 Composição do atendimento</h3>
+        <p>
+          Para aprofundar a explicação do “tipo” de atendimento que aquele
+          recepcionista está realizando, a página inclui:
+        </p>
+        <ul>
+          <li>
+            <strong>Atendimentos por convênio</strong>: ranking por convênio,
+            ajudando a entender a demanda e o perfil de atendimento (ex.:
+            convênios com maior volume, concentração em um único convênio,
+            etc.).
+          </li>
+          <li>
+            <strong>Por tipo de atendimento</strong>: gráfico de distribuição
+            por tipo, útil para mapear mix de atendimentos (ex.: retorno,
+            consulta, encaixe, procedimentos, etc.).
+          </li>
+        </ul>
+
+        <p>
+          Essas visões ajudam tanto em estratégia operacional quanto em
+          qualidade do atendimento, pois contextualizam o desempenho com o
+          “peso” e o perfil do que foi executado.
+        </p>
+
+        <h3>📋 Listagem detalhada (Tabela)</h3>
+        <p>
+          Além do resumo analítico, a página possui uma tabela completa de
+          atendimentos, com:
+        </p>
+        <ul>
+          <li>paginação e ordenação server-side,</li>
+          <li>clique para abrir detalhamento por registro (modal),</li>
+          <li>
+            campos operacionais e financeiros, como:
+            <ul>
+              <li>data do atendimento,</li>
+              <li>situação do atendimento,</li>
+              <li>cliente e idade,</li>
+              <li>usuário,</li>
+              <li>convênio,</li>
+              <li>profissional executante/solicitante,</li>
+              <li>valor total,</li>
+              <li>situação financeira e data de pagamento,</li>
+              <li>tipo de atendimento e procedimento.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p>
+          Essa tabela é essencial para auditoria, validação de dados, checagem
+          de inconsistências, e suporte à gestão (ex.: entender por que um KPI
+          variou em determinado dia).
+        </p>
+
+        <h3>📤 Exportação / Impressão</h3>
+        <p>
+          Por fim, a página oferece impressão e exportação (PDF, Excel e CSV),
+          com:
+        </p>
+        <ul>
+          <li>seleção de período (até 12 meses para exportação),</li>
+          <li>seleção de colunas,</li>
+          <li>filtros adicionais (convênio e tipo),</li>
+          <li>registro de log de exportação (rastreamento e auditoria).</li>
+        </ul>
+
+        <div class="highlight success">
+          <h3>✅ Em resumo</h3>
+          <p>
+            A página Atendimentos / Recepcionista funciona como um painel de
+            performance individual, combinando indicadores operacionais,
+            qualidade de fluxo (TME), visão financeira (ticket médio),
+            cancelamentos, detalhamento por período e listagem completa — ideal
+            para gestão e melhoria contínua do atendimento na recepção.
+          </p>
+        </div>
+      </section>
+
+      <div class="page-separator" aria-hidden="true"></div>
+
+      <section id="sec11">
+        <h2>11 - 👩‍💼👩‍💼 Atendimentos · Recepcionistas (Geral)</h2>
+
+        <p>
+          A página
+          <strong>Atendimentos / Recepcionistas (Resumo Geral)</strong> é o
+          painel consolidado para acompanhar, em um único lugar, o desempenho
+          operacional das recepcionistas dentro do período selecionado. Ela
+          permite comparar usuários lado a lado, identificando rapidamente quem
+          está atendendo mais, quem mantém melhor ritmo diário, impacto de
+          cancelamentos, além de indicadores de eficiência do fluxo (TME) e
+          resultado médio por atendimento (ticket médio).
+        </p>
+
+        <p>
+          Essa página é especialmente útil para gestão de recepção, distribuição
+          de carga, acompanhamento de performance, e para apoiar decisões de
+          escala, treinamento e ajustes operacionais.
+        </p>
+
+        <h3>🧩 Filtros e recortes de análise</h3>
+        <p>
+          O painel trabalha com filtros simples e objetivos para recortar o
+          cenário:
+        </p>
+        <ul>
+          <li>
+            Período (Data Inicial / Data Final) com controle de intervalo máximo
+            (até 3 meses na visualização).
+          </li>
+          <li>
+            Convênio para analisar o desempenho das recepcionistas sob um
+            recorte específico de demanda.
+          </li>
+        </ul>
+
+        <p>Esses filtros permitem responder perguntas como:</p>
+        <ul>
+          <li>“Como foi o desempenho da equipe esse mês?”</li>
+          <li>
+            “Qual recepcionista concentrou mais atendimentos de um convênio
+            específico?”
+          </li>
+        </ul>
+
+        <h3>
+          🏁 Visão principal: Ranking por recepcionista (tabela comparativa)
+        </h3>
+        <p>
+          O coração da página é uma tabela comparativa (ChartUsersPeriodTable)
+          que consolida as métricas por recepcionista, com:
+        </p>
+        <ul>
+          <li>nome do usuário (com avatar, quando disponível),</li>
+          <li>ordenação para destacar rapidamente os maiores volumes,</li>
+          <li>leitura clara e direta para acompanhamento diário/gerencial.</li>
+        </ul>
+
+        <p>
+          As colunas exibidas trazem as métricas mais importantes para gestão:
+        </p>
+        <ul>
+          <li>
+            <strong>Atendimentos</strong>: total de atendimentos atribuídos ao
+            usuário no período.
+          </li>
+          <li>
+            <strong>Média/dia</strong>: produtividade média diária no intervalo
+            selecionado (ideal para comparar usuários mesmo com variações de
+            dias).
+          </li>
+          <li>
+            <strong>TME</strong>: Tempo Médio de Espera, indicador-chave de
+            eficiência do atendimento e fluidez do processo.
+          </li>
+          <li>
+            <strong>Ticket Médio</strong>: valor médio por atendimento, ajudando
+            a entender o perfil e o resultado financeiro médio associado.
+          </li>
+          <li>
+            <strong>Cancelamentos</strong>: total de cancelamentos vinculados ao
+            usuário no período, apoiando identificação de gargalos e perdas
+            operacionais.
+          </li>
+        </ul>
+
+        <p>
+          📌 Importante: como a tabela é comparativa, ela facilita enxergar
+          padrões como:
+        </p>
+        <ul>
+          <li>alta produtividade com TME elevado (possível sobrecarga),</li>
+          <li>
+            usuários com ticket médio maior (perfil diferente de atendimento),
+          </li>
+          <li>
+            concentração de cancelamentos em determinados usuários ou cenários.
+          </li>
+        </ul>
+
+        <h3>📤 Exportação / Impressão</h3>
+        <p>
+          A página também oferece exportação e impressão (PDF, Excel e CSV) do
+          resumo consolidado, com:
+        </p>
+        <ul>
+          <li>seleção de período (até 12 meses para exportação),</li>
+          <li>seleção de colunas,</li>
+          <li>
+            filtros adicionais para exportação (ex.: profissional e convênio,
+            quando aplicável),
+          </li>
+          <li>geração de relatório em PDF com layout personalizado,</li>
+          <li>registro de log de exportação (auditoria e rastreabilidade).</li>
+        </ul>
+
+        <p>
+          Isso torna o painel útil não apenas no acompanhamento diário, mas
+          também para reuniões de gestão, prestação de contas interna,
+          monitoramento de performance da equipe e documentação operacional.
+        </p>
+
+        <div class="highlight success">
+          <h3>✅ Em resumo</h3>
+          <p>
+            A página Atendimentos / Recepcionistas (Resumo Geral) entrega uma
+            visão comparativa e objetiva da equipe de recepção, com métricas de
+            volume, produtividade, eficiência e impacto operacional — sendo uma
+            ferramenta essencial para gestão de desempenho, balanceamento de
+            carga e melhoria contínua do atendimento na clínica.
+          </p>
+        </div>
+      </section>
+
+      <div class="page-separator" aria-hidden="true"></div>
+
+      <section id="sec12">
+        <h2>12 - 💰 Financeiro · Dashboard</h2>
+
+        <p>
+          A página <strong>Financeiro / Dashboard</strong> é o painel principal
+          para acompanhar a saúde financeira da clínica dentro do período
+          selecionado, reunindo os principais indicadores de receita, repasse,
+          despesas e resultado em uma visão única e objetiva.
+        </p>
+
+        <p>
+          Ela é ideal para leitura gerencial, permitindo entender rapidamente
+          quanto entrou, quanto ficou com a clínica, quanto foi repassado,
+          quanto saiu em despesas e qual foi o resultado bruto, além de mostrar
+          a evolução diária desses valores para identificar variações e
+          tendências.
+        </p>
+
+        <div class="highlight">
+          <h3>🎯 Objetivo da página</h3>
+          <p>
+            O Dashboard Financeiro foi pensado para dar uma leitura clara do
+            desempenho financeiro operacional do período, ajudando a responder
+            perguntas como:
+          </p>
+          <ul>
+            <li>“Como está o faturamento neste mês?”</li>
+            <li>“O resultado está melhor ou pior que o mês anterior?”</li>
+            <li>
+              “Em quais dias houve maior impacto de despesas ou repasses?”
+            </li>
+            <li>“A clínica está retendo mais ou menos valor no período?”</li>
+          </ul>
+
+          <p>
+            Além do acompanhamento, a página apoia decisões de controle de
+            caixa, planejamento, redução de custos, e avaliação de desempenho
+            financeiro mês a mês.
+          </p>
+        </div>
+
+        <h3>🧩 Filtros e recortes de análise</h3>
+        <p>
+          O painel permite selecionar um intervalo de datas para análise (com
+          limite de até 3 meses para visualização), garantindo performance e
+          consistência na comparação.
+        </p>
+        <ul>
+          <li>Período (Data Inicial / Data Final)</li>
+        </ul>
+
+        <p>
+          Após aplicar o filtro, o sistema também busca automaticamente o mesmo
+          intervalo no mês anterior, para calcular comparativos e variações.
+        </p>
+
+        <h3>📌 KPIs do topo (visão gerencial imediata)</h3>
+        <p>
+          No topo, a página exibe os principais KPIs consolidados do período,
+          com comparação automática vs mês anterior (quando existir referência),
+          facilitando uma leitura rápida de evolução:
+        </p>
+        <ul>
+          <li>
+            <strong>Faturamento</strong>: soma do faturamento no período.
+            (Indicador de volume financeiro gerado.)
+          </li>
+          <li>
+            <strong>Valor Clínica</strong>: valor total destinado à clínica no
+            período. (Quanto efetivamente “fica” para a clínica.)
+          </li>
+          <li>
+            <strong>Valor Repasse</strong>: total repassado aos médicos no
+            período. (Impacto direto na remuneração médica e no custo variável.)
+          </li>
+          <li>
+            <strong>Despesas</strong>: total de despesas registradas no período.
+            (Base para análise de custo e eficiência.)
+          </li>
+          <li>
+            <strong>Resultado Bruto</strong>: diferença entre Valor Clínica –
+            Despesas. (Indicador-chave de performance financeira do período.)
+          </li>
+        </ul>
+
+        <p>
+          📌 Cada KPI traz uma tag de variação (+/- % vs mês anterior), o que
+          torna o painel muito eficiente para acompanhamento mensal e alertas
+          rápidos de mudança.
+        </p>
+
+        <h3>🧾 Resumo financeiro por período (Ano / Mês / Dia)</h3>
+        <p>
+          Como apoio de análise, a página oferece uma matriz por período,
+          permitindo navegar e enxergar:
+        </p>
+        <ul>
+          <li>picos e quedas por dia,</li>
+          <li>tendência ao longo do mês,</li>
+          <li>comparação entre meses (quando expandido),</li>
+          <li>consistência do resultado ao longo do período.</li>
+        </ul>
+
+        <p>A matriz consolida os indicadores:</p>
+        <ul>
+          <li>Faturamento</li>
+          <li>Valor Clínica</li>
+          <li>Repasse Médico</li>
+          <li>Despesas</li>
+          <li>Resultado Bruto</li>
+          <li>
+            Ticket Médio (média calculada a partir da granularidade do período)
+          </li>
+        </ul>
+
+        <p>Essa visão é excelente para identificar padrões como:</p>
+        <ul>
+          <li>
+            dias com faturamento alto, mas resultado baixo (possível impacto de
+            despesas),
+          </li>
+          <li>variações abruptas de repasse,</li>
+          <li>dias com ticket médio fora do padrão.</li>
+        </ul>
+
+        <h3>📉 Evolução e variação do resultado (gráfico comparativo)</h3>
+        <p>
+          O painel também traz um gráfico analítico com a comparação diária de:
+        </p>
+        <ul>
+          <li>Faturamento</li>
+          <li>Repasse Médico</li>
+          <li>Despesas</li>
+        </ul>
+
+        <p>
+          E, sobreposto a isso, destaca a Variação do Resultado, evidenciando os
+          dias em que o resultado bruto foi mais positivo ou mais pressionado.
+        </p>
+
+        <p>
+          Essa visualização é essencial para entender o “porquê” do resultado,
+          conectando diretamente entradas e saídas ao longo do tempo, e ajudando
+          a localizar gargalos financeiros com rapidez.
+        </p>
+
+        <div class="highlight success">
+          <h3>✅ Em resumo</h3>
+          <p>
+            O Financeiro / Dashboard é a página central de acompanhamento
+            financeiro do Global Clinic, unindo KPIs gerenciais, comparação com
+            mês anterior e análises por período para apoiar controle de custos,
+            avaliação de resultado e decisões estratégicas com base em dados.
+          </p>
+        </div>
+      </section>
+
+      <div class="page-separator" aria-hidden="true"></div>
+
+      <section id="sec13">
+        <h2>13 - 💳 Financeiro · Faturamento</h2>
+
+        <p>
+          A página <strong>Financeiro / Faturamento</strong> é o painel
+          principal para acompanhar receita, recebimentos e pendências
+          financeiras dentro do período selecionado, conectando o que foi
+          faturado no atendimento com o que foi efetivamente recebido, o que
+          ainda está em aberto, além de indicadores críticos como TMR de
+          recebimento e inadimplência (30+ dias).
+        </p>
+
+        <p>
+          É uma página essencial para o financeiro porque permite enxergar fluxo
+          de entrada, gargalos de cobrança, atrasos, e concentração de valor por
+          convênio e por profissional — com visão analítica e também operacional
+          por registro.
+        </p>
+
+        <div class="highlight">
+          <h3>🎯 Objetivo da página</h3>
+          <p>
+            O Faturamento serve para responder, de forma rápida e rastreável,
+            perguntas como:
+          </p>
+          <ul>
+            <li>“Quanto faturamos no período?”</li>
+            <li>
+              “Quanto já recebemos (por data do atendimento e por data de
+              pagamento)?”
+            </li>
+            <li>
+              “Qual o volume de valores em aberto e onde estão concentrados?”
+            </li>
+            <li>“Qual o tempo médio para receber (TMR)?”</li>
+            <li>“Quanto está virando inadimplência acima de 30 dias?”</li>
+            <li>“Quais convênios e profissionais concentram mais valor?”</li>
+          </ul>
+
+          <p>
+            Além do acompanhamento, a página apoia diretamente cobrança,
+            controle de caixa, auditoria de recebimentos, repasse e gestão de
+            performance financeira.
+          </p>
+        </div>
+
+        <h3>🧩 Filtros e recortes de análise</h3>
+        <p>
+          O painel possui um conjunto completo de filtros, permitindo análises
+          por período e por responsáveis/entidades do atendimento:
+        </p>
+        <ul>
+          <li>Período (Data Inicial / Data Final)</li>
+          <li>Cliente (busca textual)</li>
+          <li>Convênio (multi seleção)</li>
+          <li>Usuário (multi seleção — quem registrou/operou)</li>
+          <li>Prof. Executante (multi seleção)</li>
+          <li>Prof. Solicitante (multi seleção)</li>
+        </ul>
+
+        <p>
+          📌 Para garantir performance, a visualização e tabelas operam com
+          intervalo máximo de 3 meses, enquanto exportações permitem intervalos
+          maiores (até 12 meses).
+        </p>
+
+        <h3>📌 KPIs do topo (leitura imediata do financeiro)</h3>
+        <p>
+          No topo, a página entrega KPIs consolidados do período com comparação
+          automática vs mês anterior, facilitando entendimento de evolução e
+          alertas rápidos:
+        </p>
+        <ul>
+          <li>
+            <strong>Faturamento</strong>: total faturado no período (produção
+            financeira).
+          </li>
+          <li>
+            <strong>Recebimentos</strong>: total recebido considerando a data de
+            atendimento (visão de entrada vinculada ao serviço prestado).
+          </li>
+          <li>
+            <strong>A Receber</strong>: valores em aberto no período (pendência
+            financeira).
+          </li>
+          <li>
+            <strong>TMR Recebimento</strong>: tempo médio para receber (em
+            dias), indicador direto de eficiência de cobrança/caixa.
+          </li>
+          <li>
+            <strong>Inadimplência (30+ dias)</strong>: valor em atraso
+            relevante, com indicador percentual médio do período.
+          </li>
+        </ul>
+
+        <p>
+          Essa faixa de KPIs é o ponto central para medir saúde de recebimento,
+          pressão no caixa e risco financeiro.
+        </p>
+
+        <h3>🧠 Visões analíticas (padrões e concentração de valor)</h3>
+
+        <h4>🔹 Resumo por período (Ano / Mês / Dia)</h4>
+        <p>
+          Uma matriz consolidada que organiza os valores por período,
+          facilitando enxergar evolução diária e comportamento financeiro ao
+          longo do tempo:
+        </p>
+        <ul>
+          <li>Faturamento</li>
+          <li>Recebido (por atendimento)</li>
+          <li>Recebido (por pagamento)</li>
+          <li>A Receber</li>
+          <li>TMR de recebimento</li>
+          <li>Inadimplência (valor e %)</li>
+        </ul>
+
+        <p>Essa visão é ideal para detectar:</p>
+        <ul>
+          <li>dias com faturamento alto e recebimento baixo,</li>
+          <li>aumento de aberto ao longo do período,</li>
+          <li>
+            variações de TMR que indicam atrasos ou gargalos operacionais.
+          </li>
+        </ul>
+
+        <h4>🔹 Valor por Profissional (Executante / Solicitante)</h4>
+        <p>
+          A página permite alternar a análise para visualizar ranking de valor
+          por:
+        </p>
+        <ul>
+          <li>Profissional Executante (quem realizou)</li>
+          <li>Profissional Solicitante (quem solicitou)</li>
+        </ul>
+
+        <p>
+          Isso ajuda a entender concentração de receita, perfil de produção e
+          apoiar análises de repasse/volume por profissional.
+        </p>
+
+        <h4>🔹 Valor por Convênio</h4>
+        <p>
+          Um gráfico em barras horizontais destacando a concentração de valor
+          por convênio, útil para:
+        </p>
+        <ul>
+          <li>estratégia de negociação,</li>
+          <li>entendimento do mix de receita,</li>
+          <li>
+            identificação de convênios que mais impactam faturamento e
+            recebimento.
+          </li>
+        </ul>
+
+        <h3>🧾 Tabela operacional (Atendimentos x Repasses)</h3>
+        <p>
+          Além das visões analíticas, a página possui uma tabela completa e
+          filtrável, com alternância de modo:
+        </p>
+        <ul>
+          <li>
+            <strong>Atendimentos (Faturamento)</strong>: detalhamento por
+            atendimento com valores, descontos, status e dados do
+            paciente/procedimento.
+          </li>
+          <li>
+            <strong>Repasses</strong>: detalhamento financeiro dos repasses
+            vinculados, com valores por parcela/profissional e datas relevantes.
+          </li>
+        </ul>
+
+        <p>A tabela é robusta para uso diário do financeiro, com:</p>
+        <ul>
+          <li>Paginação e ordenação server-side</li>
+          <li>Filtro de período específico da tabela</li>
+          <li>
+            Detalhamento por registro (modal) com campos completos, como:
+            <ul>
+              <li>datas (atendimento / pagamento / repasse),</li>
+              <li>cliente e idade,</li>
+              <li>situação do atendimento e situação financeira,</li>
+              <li>usuário responsável,</li>
+              <li>convênio, procedimento, tipo de atendimento,</li>
+              <li>profissionais (solicitante/executante),</li>
+              <li>valores (bruto, clínica, plano, descontos e total).</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>📤 Exportação / impressão e auditoria</h3>
+        <p>
+          A página também é forte para auditoria e prestação de contas,
+          oferecendo exportação/impressão em:
+        </p>
+        <ul>
+          <li>PDF (layout de impressão com cabeçalho/logos)</li>
+          <li>Excel (.xlsx)</li>
+          <li>CSV</li>
+        </ul>
+
+        <p>Com controle completo de:</p>
+        <ul>
+          <li>período de exportação (até 12 meses),</li>
+          <li>tabela de origem (Faturamento ou Repasses),</li>
+          <li>seleção de colunas,</li>
+          <li>filtros aplicados.</li>
+        </ul>
+
+        <p>
+          Além disso, a exportação registra log de auditoria (quantidade de
+          linhas/colunas, período e filtros), o que fortalece rastreabilidade e
+          governança.
+        </p>
+
+        <div class="highlight success">
+          <h3>✅ Em resumo</h3>
+          <p>
+            O Financeiro / Faturamento é a página central para controlar
+            produção (faturamento), recebimentos, pendências, atrasos e
+            inadimplência, combinando KPIs gerenciais, análises de concentração
+            (convênio e profissionais), tabela operacional detalhada e
+            exportação completa para auditoria e gestão financeira.
+          </p>
+        </div>
+      </section>
+
+      <div class="page-separator" aria-hidden="true"></div>
+
+      <section id="sec14">
+        <h2>14 - 🏦 Financeiro · Recebimentos</h2>
+
+        <p>
+          A página <strong>Financeiro / Recebimentos</strong> é o painel central
+          para acompanhar a entrada real de receita da clínica no período
+          selecionado, trazendo uma visão completa do que foi registrado, do que
+          foi efetivamente recebido e de como esse recebimento se distribui por
+          dia, convênio, tipo de atendimento e forma de pagamento.
+        </p>
+
+        <p>
+          Ela é essencial para a gestão financeira e operacional, pois permite
+          validar se o fluxo de caixa está coerente com a produção, identificar
+          variações relevantes e detectar divergências (quando o valor
+          registrado e o valor recebido não batem), apoiando auditoria,
+          conciliação e tomada de decisão.
+        </p>
+
+        <h3>📌 Indicadores do topo (KPIs)</h3>
+        <p>
+          No topo, a página apresenta KPIs que dão leitura imediata do
+          desempenho financeiro no período:
+        </p>
+        <ul>
+          <li>
+            <strong>Valor</strong>: soma do valor recebido (base “Rec Valor”),
+            refletindo a receita efetivamente arrecadada.
+          </li>
+          <li>
+            <strong>Descontos</strong>: total de descontos aplicados nos
+            recebimentos, útil para monitorar impacto de negociações e
+            abatimentos.
+          </li>
+          <li>
+            <strong>Juros</strong>: total de juros recebidos no período,
+            indicando cobrança por atraso e regras financeiras aplicadas.
+          </li>
+          <li>
+            <strong>Multa</strong>: total de multas recebidas, complementando a
+            análise de inadimplência e atrasos.
+          </li>
+          <li>
+            <strong>Total</strong>: soma consolidada do valor final recebido
+            (base “Rec Valor Total”), representando o total financeiro efetivo.
+          </li>
+        </ul>
+
+        <p>
+          Além disso, cada KPI traz um comparativo “vs mês anterior”, permitindo
+          identificar rapidamente evolução, queda ou ausência de referência
+          quando não houver base comparável.
+        </p>
+
+        <h3>🧠 Visões analíticas para identificar padrões e problemas</h3>
+
+        <h4>🔹 Recebimentos por período (Ano / Mês / Dia)</h4>
+        <p>
+          Matriz que consolida por dia (com agrupamentos por mês/ano) os valores
+          de Valor, Descontos, Juros, Multa e Total, ideal para enxergar picos,
+          tendência, sazonalidade e evolução diária do caixa.
+        </p>
+
+        <h4>🔹 Recebimentos Divergentes por período</h4>
+        <p>
+          Alternativa da matriz principal focada em conciliação, comparando:
+        </p>
+        <ul>
+          <li>Valor Registrado vs Valor Recebido</li>
+          <li>Diferença consolidada por período</li>
+        </ul>
+
+        <p>
+          Essa visão destaca inconsistências financeiras e facilita auditoria.
+          Ao clicar em um dia, abre um detalhamento com os registros divergentes
+          daquele dia.
+        </p>
+
+        <h4>🔹 Forma de Pagamento</h4>
+        <p>
+          Ranking (barras horizontais) exibindo o total recebido por forma de
+          pagamento (ex.: dinheiro, cartão, Pix etc.), útil para análise de mix
+          de recebimento, estratégia de taxas e organização de caixa/contas.
+        </p>
+
+        <h4>🔹 Recebimentos por Convênio</h4>
+        <p>
+          Gráfico comparativo (barras verticais) do total recebido por convênio,
+          apoiando análise de participação, relevância de parceiros e
+          concentração de receita.
+        </p>
+
+        <h4>🔹 Tipo de Atendimento</h4>
+        <p>
+          Distribuição (pizza com legenda) do valor recebido por tipo de
+          atendimento, ajudando a entender quais frentes/linhas de serviço estão
+          gerando mais receita.
+        </p>
+
+        <h3>🧩 Filtros e segmentações</h3>
+        <p>
+          A página possui um conjunto robusto de filtros para refinar a análise:
+        </p>
+        <ul>
+          <li>Período (data inicial e final) para a visão geral do painel.</li>
+          <li>Cliente (busca).</li>
+          <li>Convênio (multi-seleção).</li>
+          <li>
+            Usuário (multi-seleção) — para rastrear
+            origem/lançamento/responsável.
+          </li>
+          <li>
+            Profissional Executante (multi-seleção) — para cruzar produção com
+            recebimento.
+          </li>
+        </ul>
+
+        <p>
+          Isso permite investigar desde o macro (receita total no mês) até o
+          micro (recebimentos de um cliente ou convênio específico).
+        </p>
+
+        <h3>📋 Tabela de Recebimentos (operacional e auditável)</h3>
+        <p>
+          Além das visões, a página traz uma Tabela de Recebimentos completa e
+          filtrável, com:
+        </p>
+        <ul>
+          <li>Paginação e ordenação server-side</li>
+          <li>
+            Filtro de período específico da tabela (limitado a até 3 meses, para
+            performance e leitura operacional)
+          </li>
+          <li>
+            Clique no registro para abrir um detalhamento em modal, exibindo
+            informações completas da parcela/recebimento
+          </li>
+        </ul>
+
+        <p>
+          Campos típicos apresentados incluem datas
+          (atendimento/vencimento/pagamento), situação do atendimento, situação
+          financeira, responsável pelo recebimento, valores (registrado,
+          recebido, descontos, juros, multa, total) e dados complementares como
+          cliente, convênio, procedimento, usuários e profissionais.
+        </p>
+
+        <h3>📤 Exportação e impressão (PDF / Excel / CSV)</h3>
+        <p>
+          Por fim, a página oferece exportação/impressão com controle avançado:
+        </p>
+        <ul>
+          <li>Seleção de período, filtros e colunas a serem incluídas</li>
+          <li>Formatos: PDF (layout personalizado), Excel (.xlsx) e CSV</li>
+          <li>Período máximo de exportação: 12 meses</li>
+          <li>
+            Inclusão de linha de totais no PDF (quando aplicável), facilitando
+            conferência e repasse interno
+          </li>
+        </ul>
+
+        <div class="highlight success">
+          <h3>✅ Em resumo</h3>
+          <p>
+            Isso torna a página especialmente importante para auditoria,
+            conciliação financeira, prestação de contas interna e acompanhamento
+            da eficiência do ciclo “atendimento → cobrança → recebimento”.
+          </p>
+        </div>
+      </section>
+
+      <div class="page-separator" aria-hidden="true"></div>
+
+      <section id="sec15">
+        <h2>15 - 💸 Financeiro · Em Aberto</h2>
+
+        <p>
+          A página <strong>Financeiro / Em Aberto</strong> é o painel dedicado a
+          acompanhar tudo o que a clínica ainda tem para receber, consolidando
+          valores pendentes, atrasos e vencimentos futuros dentro do período
+          selecionado.
+        </p>
+
+        <p>
+          Ela é essencial para o financeiro porque transforma o “contas a
+          receber” em uma visão acionável: mostra onde está concentrado o aberto
+          (por convênio, profissional, cliente e forma de pagamento), quais
+          títulos estão vencidos, e quais são os maiores riscos de
+          inadimplência.
+        </p>
+
+        <div class="highlight">
+          <h3>🎯 Objetivo da página</h3>
+          <p>
+            O Financeiro · Em Aberto foi criado para responder perguntas como:
+          </p>
+          <ul>
+            <li>Quanto existe para receber hoje (total em aberto)?</li>
+            <li>Quanto já está vencido e há quantos dias?</li>
+            <li>Quais convênios/clientes concentram maior valor em aberto?</li>
+            <li>
+              Quais profissionais têm maior impacto no aberto (pela produção
+              associada)?
+            </li>
+            <li>Quais títulos exigem ação imediata de cobrança?</li>
+          </ul>
+        </div>
+
+        <h3>📌 Indicadores do topo (KPIs)</h3>
+        <p>
+          No topo, a página apresenta KPIs de leitura imediata sobre o risco e o
+          volume do aberto:
+        </p>
+        <ul>
+          <li>
+            <strong>A Receber</strong>: soma total dos valores pendentes no
+            recorte selecionado.
+          </li>
+          <li>
+            <strong>Vencido</strong>: total de títulos já vencidos (atrasados).
+          </li>
+          <li>
+            <strong>A Vencer</strong>: total previsto para vencer (ainda dentro
+            do prazo).
+          </li>
+          <li>
+            <strong>Qtd Títulos</strong>: quantidade de parcelas/lançamentos em
+            aberto.
+          </li>
+          <li>
+            <strong>Atraso Médio</strong>: média de dias de atraso (quando
+            houver vencidos), indicador direto de pressão na cobrança.
+          </li>
+        </ul>
+
+        <p>
+          Assim como nos demais painéis financeiros, os KPIs podem trazer
+          comparação vs mês anterior quando existir referência, ajudando a
+          identificar tendência de melhora ou piora do aberto.
+        </p>
+
+        <h3>🧠 Visões analíticas (concentração e risco)</h3>
+
+        <h4>🔹 Em aberto por período (Ano / Mês / Dia)</h4>
+        <p>
+          Matriz que consolida o valor em aberto por data (com navegação por
+          mês/ano), útil para entender evolução, concentração de vencimentos e
+          comportamento do contas a receber ao longo do tempo.
+        </p>
+
+        <h4>🔹 Envelhecimento do aberto (faixas de atraso)</h4>
+        <p>
+          Visão de distribuição por faixas de vencimento/atraso (ex.: a vencer,
+          1–7 dias, 8–15, 16–30, 30+), essencial para priorizar cobrança e
+          enxergar risco de inadimplência.
+        </p>
+
+        <h4>🔹 A Receber por Convênio</h4>
+        <p>
+          Ranking (barras horizontais) mostrando quais convênios concentram
+          maior volume em aberto, apoiando ações como conciliação, negociação e
+          cobrança estruturada por parceiro.
+        </p>
+
+        <h4>🔹 A Receber por Profissional</h4>
+        <p>
+          Ranking por profissional (executante/solicitante, conforme o modelo do
+          painel), útil para cruzar produção com recebimento e identificar
+          concentrações relevantes do aberto por equipe.
+        </p>
+
+        <h4>🔹 A Receber por Forma de Pagamento</h4>
+        <p>
+          Análise do mix do aberto por forma de pagamento (ex.: boleto, cartão,
+          Pix, convênio etc.), ajudando a entender onde estão as maiores
+          pendências por tipo de cobrança.
+        </p>
+
+        <h3>🧩 Filtros e segmentações</h3>
+        <p>
+          A página possui filtros para investigação e recortes operacionais:
+        </p>
+        <ul>
+          <li>Período (Data inicial e final) da visão geral.</li>
+          <li>Cliente (busca textual).</li>
+          <li>Convênio (multi-seleção).</li>
+          <li>
+            Usuário (multi-seleção) — responsável/operador vinculado ao
+            registro.
+          </li>
+          <li>
+            Profissional Executante (multi-seleção) — para cruzar produção com
+            aberto.
+          </li>
+          <li>
+            Somente vencidos / somente a vencer (quando disponível como atalho
+            de filtro).
+          </li>
+        </ul>
+
+        <h3>📋 Tabela de Em Aberto (operacional e para cobrança)</h3>
+        <p>
+          A página traz uma Tabela completa com os títulos/parcelas em aberto,
+          ideal para rotina de cobrança e conferência:
+        </p>
+        <ul>
+          <li>Paginação e ordenação server-side</li>
+          <li>
+            Filtro de período específico da tabela (geralmente limitado a até 3
+            meses para performance operacional)
+          </li>
+          <li>
+            Indicadores visuais de vencimento (em dia x vencido) e dias de
+            atraso
+          </li>
+          <li>
+            Clique no registro para abrir modal de detalhes com dados completos
+            do recebível
+          </li>
+        </ul>
+
+        <p>
+          Campos típicos: datas (atendimento, vencimento e pagamento quando
+          existir), status financeiro, cliente, convênio, profissional, forma de
+          pagamento, valor, descontos/juros/multa (quando aplicável) e total.
+        </p>
+
+        <h3>📤 Exportação e impressão (PDF / Excel / CSV)</h3>
+        <p>
+          Para apoiar cobrança, conciliação e auditoria, a página permite
+          exportar a listagem e recortes analíticos:
+        </p>
+        <ul>
+          <li>Seleção de período, filtros e colunas</li>
+          <li>Formatos: PDF (layout personalizado), Excel (.xlsx) e CSV</li>
+          <li>Período máximo de exportação: até 12 meses</li>
+          <li>
+            Registro de log de exportação (usuário, período, filtros, colunas,
+            formato e quantidade de linhas)
+          </li>
+        </ul>
+
+        <div class="highlight success">
+          <h3>✅ Por que essa página é importante</h3>
+          <p>
+            O Financeiro · Em Aberto é a base para transformar dados financeiros
+            em ação, porque evidencia risco, prioriza cobrança e dá visibilidade
+            do caixa futuro. Na prática, é a página que mais ajuda o financeiro
+            a reduzir atraso, controlar inadimplência e manter previsibilidade
+            do fluxo de entrada.
+          </p>
+        </div>
+      </section>
+
+      <div class="page-separator" aria-hidden="true"></div>
+
+      <section id="sec16">
+        <h2>16 - 🧾 Financeiro · Despesas</h2>
+
+        <p>
+          A página <strong>Financeiro / Despesas</strong> é o painel dedicado ao
+          acompanhamento e análise das saídas financeiras da clínica no período
+          selecionado, consolidando gastos por categoria, centro de custo, forma
+          de pagamento e evolução ao longo do tempo.
+        </p>
+
+        <p>
+          Ela é essencial para controle e eficiência, pois permite entender onde
+          o dinheiro está sendo consumido, quais despesas estão pressionando o
+          resultado e como o comportamento de custos varia ao longo do mês.
+        </p>
+
+        <div class="highlight">
+          <h3>🎯 Objetivo da página</h3>
+          <p>
+            O Financeiro · Despesas foi criado para responder perguntas como:
+          </p>
+          <ul>
+            <li>
+              Quanto gastamos no período e como isso compara com o mês anterior?
+            </li>
+            <li>Quais categorias concentram maior valor de despesa?</li>
+            <li>
+              Quais são os principais fornecedores/lançamentos que pressionam o
+              custo?
+            </li>
+            <li>Como as despesas se distribuem por forma de pagamento?</li>
+            <li>Em quais dias houve picos de custo?</li>
+          </ul>
+        </div>
+
+        <h3>📌 Indicadores do topo (KPIs)</h3>
+        <p>
+          No topo, a página apresenta KPIs que entregam leitura imediata do
+          custo no período:
+        </p>
+        <ul>
+          <li>
+            <strong>Despesas</strong>: valor total de despesas no intervalo.
+          </li>
+          <li>
+            <strong>Qtd Lançamentos</strong>: quantidade de registros de
+            despesa.
+          </li>
+          <li>
+            <strong>Média/Dia</strong>: média de despesas por dia (ajuda a
+            comparar períodos diferentes).
+          </li>
+          <li>
+            <strong>Maior Despesa</strong>: maior lançamento individual no
+            período (alerta de pico).
+          </li>
+          <li>
+            <strong>Variação vs mês anterior</strong>: indicador para enxergar
+            tendência (quando aplicável).
+          </li>
+        </ul>
+
+        <h3>🧠 Visões analíticas (controle e eficiência)</h3>
+
+        <h4>🔹 Despesas por período (Ano / Mês / Dia)</h4>
+        <p>
+          Matriz consolidando o total de despesas por dia, com agrupamento por
+          mês/ano para analisar sazonalidade, picos e comportamento do custo ao
+          longo do tempo.
+        </p>
+
+        <h4>🔹 Despesas por Categoria</h4>
+        <p>
+          Ranking (barras horizontais) destacando as categorias com maior
+          consumo, essencial para identificar onde atuar (ex.: renegociação,
+          corte, revisão de contratos).
+        </p>
+
+        <h4>🔹 Despesas por Forma de Pagamento</h4>
+        <p>
+          Visão do mix de pagamento (ex.: boleto, Pix, cartão, dinheiro), útil
+          para conciliação e organização do fluxo de pagamentos.
+        </p>
+
+        <h4>🔹 Análise por Fornecedor / Responsável</h4>
+        <p>
+          Rankings que ajudam a localizar concentração de custo por fornecedor
+          (para negociação) e por responsável/usuário (para governança e
+          auditoria).
+        </p>
+
+        <h3>🧩 Filtros e segmentações</h3>
+        <p>A página permite refinar a análise com filtros como:</p>
+        <ul>
+          <li>Período (data inicial e final).</li>
+          <li>Categoria (multi-seleção).</li>
+          <li>Forma de pagamento (multi-seleção).</li>
+          <li>Fornecedor (busca ou multi-seleção, quando disponível).</li>
+          <li>Usuário/Responsável (multi-seleção, quando aplicável).</li>
+        </ul>
+
+        <h3>📋 Tabela de Despesas (operacional e auditável)</h3>
+        <p>
+          A tabela apresenta os lançamentos individuais de despesa, com foco em
+          conferência, auditoria e controle:
+        </p>
+        <ul>
+          <li>Paginação e ordenação server-side</li>
+          <li>
+            Filtro de período específico da tabela (geralmente até 3 meses para
+            performance)
+          </li>
+          <li>
+            Clique no registro para abrir modal de detalhes com informações
+            completas do lançamento
+          </li>
+        </ul>
+
+        <p>
+          Campos típicos: data, descrição/histórico, categoria, fornecedor,
+          forma de pagamento, valor, usuário responsável e observações (quando
+          houver).
+        </p>
+
+        <h3>📤 Exportação e impressão (PDF / Excel / CSV)</h3>
+        <p>Para auditoria e gestão, a página permite exportar:</p>
+        <ul>
+          <li>Seleção de período, filtros e colunas</li>
+          <li>Formatos: PDF, Excel (.xlsx) e CSV</li>
+          <li>Período máximo de exportação: até 12 meses</li>
+          <li>Log de exportação para rastreabilidade</li>
+        </ul>
+
+        <div class="highlight success">
+          <h3>✅ Por que essa página é importante</h3>
+          <p>
+            O Financeiro · Despesas é a principal ferramenta para controle de
+            custos, porque mostra onde o dinheiro sai, quais itens mais
+            pressionam o resultado e quais ações podem reduzir desperdício. Na
+            prática, é o painel que sustenta disciplina financeira e melhora do
+            resultado bruto.
+          </p>
+        </div>
+      </section>
+
+      <div class="page-separator" aria-hidden="true"></div>
+
+      <section id="sec17">
+        <h2>17 - 📊 Financeiro · DRE</h2>
+
+        <p>
+          A página <strong>Financeiro / DRE</strong> é o painel gerencial que
+          organiza receitas e despesas em formato de Demonstrativo de Resultado
+          (DRE), permitindo avaliar desempenho econômico do período com visão
+          estruturada por grupos e categorias.
+        </p>
+
+        <p>
+          Diferente de um painel operacional, aqui o foco é entendimento de
+          resultado: quanto entrou, quais custos consumiram a margem, qual foi o
+          lucro/prejuízo e como isso evolui por mês/dia (conforme a
+          granularidade selecionada).
+        </p>
+
+        <div class="highlight">
+          <h3>🎯 Objetivo da página</h3>
+          <p>O Financeiro · DRE serve para responder perguntas como:</p>
+          <ul>
+            <li>Qual foi o resultado do período (lucro/prejuízo)?</li>
+            <li>Qual a margem bruta e como ela variou?</li>
+            <li>Quais grupos de despesa mais impactam o resultado?</li>
+            <li>Como a receita e os custos evoluem ao longo do tempo?</li>
+            <li>
+              Onde estão as maiores oportunidades de eficiência (redução de
+              custos) ou crescimento (receita)?
+            </li>
+          </ul>
+        </div>
+
+        <h3>🧩 Controle de período e visão</h3>
+        <p>
+          A DRE é sempre guiada por período (Data inicial / Data final), com
+          organização em estrutura hierárquica, permitindo leitura gerencial e
+          comparação entre meses.
+        </p>
+
+        <h3>📌 Estrutura da DRE (visão em matriz)</h3>
+        <p>
+          O coração da página é uma matriz no formato DRE, normalmente
+          organizada por linhas (grupos/categorias) e colunas (período),
+          trazendo subtotais e consolidado final.
+        </p>
+
+        <p>
+          Exemplos de linhas comuns em uma DRE (dependendo do cadastro da
+          clínica):
+        </p>
+        <ul>
+          <li>Receita Bruta</li>
+          <li>Deduções/Descontos</li>
+          <li>Receita Líquida</li>
+          <li>Custos Variáveis (ex.: repasses médicos)</li>
+          <li>Despesas Operacionais (por categorias)</li>
+          <li><strong>Resultado</strong> (lucro/prejuízo)</li>
+        </ul>
+
+        <p>
+          O objetivo é permitir que a gestão enxergue o “filme” do resultado, e
+          não apenas indicadores isolados.
+        </p>
+
+        <h3>🧠 Análises complementares</h3>
+        <p>
+          Além da matriz principal, a página pode trazer visões de apoio como:
+        </p>
+        <ul>
+          <li>comparativos vs mês anterior</li>
+          <li>participação (%) de grupos no total</li>
+          <li>tendência do resultado ao longo do período</li>
+        </ul>
+
+        <h3>🧩 Filtros</h3>
+        <p>
+          Os filtros são focados em período e, quando aplicável, dimensões de
+          agrupamento:
+        </p>
+        <ul>
+          <li>Período (Data inicial e final)</li>
+          <li>Empresa/Unidade (quando houver multi-unidade)</li>
+          <li>Centros de custo / categorias (quando disponíveis no modelo)</li>
+        </ul>
+
+        <h3>📤 Exportação e impressão (PDF / Excel / CSV)</h3>
+        <p>
+          Por ser um relatório gerencial clássico, a DRE suporta exportação para
+          compartilhamento e prestação de contas:
+        </p>
+        <ul>
+          <li>PDF (layout de impressão)</li>
+          <li>Excel (.xlsx) para análises adicionais</li>
+          <li>CSV</li>
+        </ul>
+        <p>
+          Com seleção de período e registro de log de exportação para auditoria.
+        </p>
+
+        <div class="highlight success">
+          <h3>✅ Por que essa página é importante</h3>
+          <p>
+            O Financeiro · DRE é a visão mais gerencial do módulo: ela
+            transforma receitas e despesas em um demonstrativo claro de
+            resultado, permitindo avaliar margem, eficiência e sustentabilidade
+            financeira. Na prática, é a página usada para decisões estratégicas
+            e acompanhamento de performance econômica.
+          </p>
+        </div>
+      </section>
+
+      <div class="page-separator" aria-hidden="true"></div>
+
+      <section id="sec18">
+        <h2>18 - 🩺👨‍⚕️ Painel Médico · Painel</h2>
+
+        <p>
+          A página <strong>Painel Médico · Painel</strong> é um dashboard
+          dedicado ao acompanhamento da produção e performance dos
+          profissionais, oferecendo uma visão rápida e detalhada do volume
+          atendido, eficiência de fluxo, perfil de convênios e resultado
+          financeiro associado.
+        </p>
+
+        <p>
+          Ela é ideal para coordenação médica e gestão, pois conecta
+          produtividade (quantos atendimentos foram feitos) com qualidade
+          operacional (tempos médios) e impacto financeiro (ticket/valores),
+          permitindo acompanhar tendências e investigar variações por período.
+        </p>
+
+        <div class="highlight">
+          <h3>🎯 Objetivo da página</h3>
+          <p>O Painel Médico foi criado para responder perguntas como:</p>
+          <ul>
+            <li>Quais profissionais estão atendendo mais no período?</li>
+            <li>Como estão os tempos médios (TME/TMA) por profissional?</li>
+            <li>Qual é o ticket médio e o valor total por profissional?</li>
+            <li>
+              Como a produção se distribui por convênio e por tipo de
+              atendimento?
+            </li>
+            <li>Quais variações aconteceram vs mês anterior?</li>
+          </ul>
+        </div>
+
+        <h3>📌 Indicadores do topo (KPIs)</h3>
+        <p>
+          No topo, a página apresenta KPIs que resumem o período, geralmente com
+          comparativo vs mês anterior:
+        </p>
+        <ul>
+          <li>
+            <strong>Atendimentos</strong>: total de atendimentos realizados.
+          </li>
+          <li>
+            <strong>TME</strong>: tempo médio de espera (indicador de
+            fluxo/atraso).
+          </li>
+          <li>
+            <strong>TMA</strong>: tempo médio de atendimento (capacidade e
+            produtividade).
+          </li>
+          <li>
+            <strong>Ticket Médio</strong>: valor médio por atendimento (perfil e
+            resultado).
+          </li>
+          <li>
+            <strong>Cancelamentos</strong>: total de cancelamentos associados
+            (impacto operacional).
+          </li>
+        </ul>
+
+        <h3>🧠 Visões analíticas (produção e desempenho)</h3>
+
+        <h4>🔹 Resumo por período (Ano / Mês / Dia)</h4>
+        <p>
+          Matriz consolidando a produção e métricas ao longo do tempo,
+          permitindo identificar picos, sazonalidade e variações de desempenho.
+        </p>
+
+        <h4>🔹 Ranking por profissional</h4>
+        <p>
+          Gráficos de barras (verticais/horizontais, conforme o layout) com
+          rankings por:
+        </p>
+        <ul>
+          <li>Quantidade de atendimentos</li>
+          <li>Valor total</li>
+          <li>Ticket médio</li>
+          <li>Tempos médios (TME/TMA)</li>
+        </ul>
+
+        <p>
+          Essas visões ajudam a acompanhar produtividade, equilíbrio de carga e
+          diferenças de performance entre profissionais.
+        </p>
+
+        <h4>🔹 Mix por Convênio e Tipo de Atendimento</h4>
+        <p>
+          Análises de distribuição por convênio e por tipo de atendimento, úteis
+          para entender perfil de demanda por profissional e apoiar decisões de
+          agenda e estratégia de carteira.
+        </p>
+
+        <h3>🧩 Filtros e recortes</h3>
+        <p>A página permite recortar a análise com filtros como:</p>
+        <ul>
+          <li>Período (Data inicial e final)</li>
+          <li>
+            Profissional (multi-seleção ou foco em um profissional, dependendo
+            do modo)
+          </li>
+          <li>Convênio (multi-seleção)</li>
+          <li>Tipo de atendimento (multi-seleção)</li>
+        </ul>
+
+        <h3>📋 Tabela detalhada (quando aplicável)</h3>
+        <p>
+          Em muitos cenários, o Painel Médico também oferece uma tabela
+          detalhada de atendimentos/produção para auditoria e conferência, com
+          paginação, ordenação e detalhamento por registro.
+        </p>
+
+        <h3>📤 Exportação e impressão (PDF / Excel / CSV)</h3>
+        <p>
+          A página suporta exportação para acompanhamento gerencial e
+          compartilhamento:
+        </p>
+        <ul>
+          <li>PDF</li>
+          <li>Excel (.xlsx)</li>
+          <li>CSV</li>
+        </ul>
+
+        <div class="highlight success">
+          <h3>✅ Por que essa página é importante</h3>
+          <p>
+            O Painel Médico é essencial para acompanhar performance do corpo
+            clínico, conectando produção, tempos de fluxo e resultado financeiro
+            em uma visão única. Na prática, apoia gestão de agenda médica,
+            balanceamento de carga, melhoria de eficiência e monitoramento de
+            indicadores por profissional.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        © AnalyzeX · Global Clinic — Manual de Indicadores, Relatórios e
+        Dashboards
+      </p>
+    </footer>
+    <script src="../js/font-scale.js" defer></script>
+  </body>
+</html>
